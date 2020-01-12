@@ -9,7 +9,7 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "prod": "pm2 start npm ecosystem.config.js --name app -- start",
+        "prod": "pm2 start npm -- start",
         "test": "jest"
     },
     "dependencies": {
