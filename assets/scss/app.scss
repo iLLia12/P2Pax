@@ -1,0 +1,142 @@
+@import "icons";
+@import 'variables';
+@import 'element-ui';
+@import "navbar";
+
+html {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background: #F2F6FC;
+}
+button, input {
+    border-radius: 0 !important;
+}
+.button--green {
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #3b8070;
+    color: #3b8070;
+    text-decoration: none;
+    padding: 10px 30px;
+}
+
+.button--green:hover {
+    color: #fff;
+    background-color: #3b8070;
+}
+
+.button--grey {
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #35495e;
+    color: #35495e;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-left: 15px;
+}
+
+.button--grey:hover {
+    color: #fff;
+    background-color: #35495e;
+}
+
+.el-main, .el-header, .el-footer {
+    padding: 0;
+}
+.el-menu {
+    border-bottom: none !important;
+    background: #F2F6FC;
+}
+#menu {
+    box-shadow: 0px 4px 12px -3px rgba(0,0,0,0.46);
+}
+.btn-shadow {
+    box-shadow: 0px 4px 12px -4px rgba(0,0,0,0.68);
+}
+.is-always-shadow {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12)!important;
+}
+.el-card {
+    border-radius: 0;
+}
+@media (max-width: 1200px){
+    .inner-container {
+        padding: 0 30px;
+    }
+}
+@media (max-width: 768px){
+    .benefits-flex-disabler {
+        display: block;
+    }
+    .benefits-col-wrap {
+        margin-bottom: 30px;
+    }
+    .banner-img-wrap {
+        display: none;
+    }
+    .banner-text-wrap {
+        width: 100% !important;
+    }
+    .free-title {
+        text-align: center;
+    }
+    .free-stat {
+        text-align: center;
+    }
+    .banner-btn {
+        width: 100% !important;
+    }
+    .banner-text-response {
+        font-size: 20px;
+    }
+    .card-inputs {
+        height: auto !important;
+    }
+    .quick-buy-table {
+        display: block !important;
+    }
+    .quick-buy-table {
+        display: block !important;
+    }
+    .search-input, .search-btn {
+        width: 100% !important;
+    }
+    .quick-buy-btn-wrap {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 1700px){
+    .benefits-col {
+        display: block;
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .el-card__body {
+        height: auto !important;
+    }
+    .benefits-present, .benefits-money {
+        display: flex;
+        justify-content: center;
+    }
+    .head-title-block, .head-text-block {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
