@@ -35,12 +35,19 @@ button, input {
     text-decoration: none;
     padding: 10px 30px;
 }
-
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
 .button--green:hover {
     color: #fff;
     background-color: #3b8070;
 }
-
+.free-stat, .free-title {
+    text-align:left;
+}
 .button--grey {
     display: inline-block;
     border-radius: 4px;
@@ -75,9 +82,57 @@ button, input {
 .el-card {
     border-radius: 0;
 }
+.icon-sm {
+    width: 15px;
+    height: 15px;
+}
+@media (max-width: 1700px){
+    .benefits-col {
+        display: block;
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .el-card__body {
+        height: auto !important;
+    }
+    .benefits-present, .benefits-money {
+        display: flex;
+        justify-content: center;
+    }
+    .head-title-block, .head-text-block {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 1700px){
+    .banner-btn {
+        width: 60%!important;
+    }
+}
+@media (max-width: 1400px){
+    .banner-btn {
+        width: 100% !important;
+    }
+}
+@media (max-width: 1300px){
+    .banner-text-response{
+        font-size: 30px;
+    }
+}
 @media (max-width: 1200px){
     .inner-container {
         padding: 0 30px;
+    }
+}
+@media (max-width: 950px){
+    .banner-img-wrap {
+        display: none;
+    }
+    .banner-text-wrap {
+        width: 100%!important;
+    }
+    .free-stat, .free-title {
+        text-align: center;
     }
 }
 @media (max-width: 768px){
@@ -121,22 +176,14 @@ button, input {
         display: flex;
         justify-content: flex-end;
     }
-}
-@media (max-width: 1700px){
-    .benefits-col {
+    .nav-link-registration, .nav-link-login {
         display: block;
-        width: 100%;
-        margin-left: 0 !important;
     }
-    .el-card__body {
-        height: auto !important;
-    }
-    .benefits-present, .benefits-money {
-        display: flex;
-        justify-content: center;
-    }
-    .head-title-block, .head-text-block {
-        text-align: center;
-        margin-top: 10px;
+    .nav-link-lang {
+        display: flex !important;
+        border-bottom-color: transparent;
+        padding: 20px!important;
+        margin-top: 20px!important;
+        justify-content: space-evenly !important;
     }
 }

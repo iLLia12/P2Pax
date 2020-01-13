@@ -10,17 +10,78 @@
                                     <Logo />
                                 </el-menu-item>
                                 <el-menu-item class="nav-link">
-                                    Buy
+                                    {{ $t('top_nav.buy') }}
                                 </el-menu-item>
                                 <el-menu-item class="nav-link">
-                                    Sell
+                                    {{ $t('top_nav.sell') }}
                                 </el-menu-item>
                                 <el-menu-item class="nav-link">
-                                    Post Trade
+                                    {{ $t('top_nav.post_trade') }}
+                                </el-menu-item>
+                                <el-menu-item class="nav-link nav-link-login">
+                                    <el-button class="btn-shadow" type="success">{{ $t('top_nav.login') }}</el-button>
+                                    <el-button class="btn-shadow" type="primary">{{ $t('top_nav.registration') }}</el-button>
+                                    <div class="nav-link-lang">
+                                        <nuxt-link
+                                            v-if="$i18n.locale !== 'en'"
+                                            :to="switchLocalePath('en')">
+                                            <div :class="getLangIconClass('en')" @click="showPopover"></div>
+                                        </nuxt-link>
+                                        <nuxt-link
+                                            v-if="$i18n.locale !== 'ru'"
+                                            :to="switchLocalePath('ru')">
+                                            <div :class="getLangIconClass('ru')" @click="showPopover"></div>
+                                        </nuxt-link>
+                                        <nuxt-link
+                                            v-if="$i18n.locale !== 'es'"
+                                            :to="switchLocalePath('es')">
+                                            <div :class="getLangIconClass('es')" @click="showPopover"></div>
+                                        </nuxt-link>
+                                        <nuxt-link
+                                            v-if="$i18n.locale !== 'zh'"
+                                            :to="switchLocalePath('zh')">
+                                            <div :class="getLangIconClass('zh')" @click="showPopover"></div>
+                                        </nuxt-link>
+                                    </div>
                                 </el-menu-item>
                                 <div class="nav-btn-wrap">
-                                    <el-button class="btn-shadow" type="primary">Registration</el-button>
-                                    <el-button class="btn-shadow" type="success">Login</el-button>
+                                    <el-dropdown class="lang-dropdown">
+                                        <span class="el-dropdown-link">
+                                            <div :class="langFlagIcon" @click="showPopover" id="changeLangButton"></div>
+                                        </span>
+                                        <el-dropdown-menu slot="dropdown">
+                                            <el-dropdown-item>
+                                                <nuxt-link
+                                                    v-if="$i18n.locale !== 'es'"
+                                                    :to="switchLocalePath('es')">
+                                                    <div :class="getLangIconClass('es')" @click="showPopover"></div>
+                                                </nuxt-link>
+                                            </el-dropdown-item>
+                                            <el-dropdown-item>
+                                                <nuxt-link
+                                                    v-if="$i18n.locale !== 'en'"
+                                                    :to="switchLocalePath('en')">
+                                                    <div :class="getLangIconClass('en')" @click="showPopover"></div>
+                                                </nuxt-link>
+                                            </el-dropdown-item>
+                                            <el-dropdown-item>
+                                                <nuxt-link
+                                                    v-if="$i18n.locale !== 'ru'"
+                                                    :to="switchLocalePath('ru')">
+                                                    <div :class="getLangIconClass('ru')" @click="showPopover"></div>
+                                                </nuxt-link>
+                                            </el-dropdown-item>
+                                            <el-dropdown-item>
+                                                <nuxt-link
+                                                    v-if="$i18n.locale !== 'zh'"
+                                                    :to="switchLocalePath('zh')">
+                                                    <div :class="getLangIconClass('zh')" @click="showPopover"></div>
+                                                </nuxt-link>
+                                            </el-dropdown-item>
+                                        </el-dropdown-menu>
+                                    </el-dropdown>
+                                    <el-button class="btn-shadow" type="primary">{{ $t('top_nav.login') }}</el-button>
+                                    <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
                                 </div>
                             </el-col>
                         </el-row>
@@ -39,19 +100,51 @@
         <el-footer class="footer">
             <el-row>
                 <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
-                    <el-row>
-                        <el-col :span="12">
-                            <img class="logo-footer" src="~/assets/images/logo-2.png" alt="">
-                            <div class="footer-text-small">
-                                © p2pax.com All rights reserved
+                    <el-row type="flex" justify="space-between">
+                        <el-col :span="5">
+                            <img class="logo-footer mb-10" src="~/assets/images/logo-2.png" alt="">
+                            <div class="footer-text-small mb-10">
+                                © p2pax.com {{ $t('hooter.all_right') }}
                             </div>
-                            <div class="footer-text-small">
-                                Follow us
+                            <div class="footer-text-small mb-10">
+                                {{ $t('hooter.follow_us') }}:
+                            </div>
+                            <div class="footer-icons-wrap mb-10">
+                                <div class="icon icon_facebook icon-sm"></div>
+                                <div class="icon icon_instagram icon-sm"></div>
+                                <div class="icon icon_twitter icon-sm"></div>
+                                <div class="icon icon_linkedin icon-sm"></div>
+                                <div class="icon icon_telegram icon-sm"></div>
                             </div>
                         </el-col>
-                        <el-col :span="12">
-
+                        <!--<el-col :span="7">
+                            <p class="footer-section-title text-center">{{ $t('hooter.actions') }}</p>
+                            <div class="footer-links-wrap">
+                                <nuxt-link class="footer-link text-center" to="/buy">{{ $t('hooter.buy') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.sell') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.trade_center') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.quick_transfer') }}</nuxt-link>
+                            </div>
                         </el-col>
+                        <el-col :span="7">
+                            <p class="footer-section-title text-center">{{ $t('hooter.about') }}</p>
+                            <div class="footer-links-wrap">
+                                <nuxt-link class="footer-link  text-center" to="/buy">{{ $t('hooter.terms') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.about_us') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.partnership') }}</nuxt-link>
+                            </div>
+                        </el-col>
+                        <el-col :span="7">
+                            <p class="footer-section-title text-right">{{ $t('hooter.support') }}</p>
+                            <div class="footer-links-wrap">
+                                <nuxt-link class="footer-link  text-right" to="/buy">{{ $t('hooter.support_request') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.faq') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.formula') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.forget_password') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.forget_double_auth') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.fishing') }}</nuxt-link>
+                            </div>
+                        </el-col>-->
                     </el-row>
                 </el-col>
             </el-row>
@@ -63,16 +156,28 @@
 
     import Logo from '../components/Logo'
 
+    const icons = {
+        'en':'icon_uk',
+        'ru':'icon_ru',
+        'zh':'icon_zh',
+        'es':'icon_es',
+    };
+
     export default {
         components: {
             Logo
         },
-
         data() {
             return {
+                isLangShown:false,
                 activeIndex: '/hello',
                 isActive: false
             }
+        },
+        computed: {
+            langFlagIcon() {
+                return 'icon icon_lang ' + icons[this.$i18n.locale];
+            },
         },
         methods: {
             handleSelect(key, keyPath) {
@@ -80,6 +185,12 @@
             },
             select: function() {
                 this.isActive = !this.isActive;
+            },
+            showPopover(){
+                this.isLangShown = !this.isLangShown
+            },
+            getLangIconClass(lang) {
+                return 'icon icon_lang ' + icons[lang];
             }
         }
     }
@@ -94,6 +205,11 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+    .icon_lang {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
     }
     .el-col {
         border-radius: 4px;
@@ -115,8 +231,11 @@
         padding: 10px 0;
         background-color: #f9fafc;
     }
-    .footer {
-
+    .nav-link-registration, .nav-link-login {
+        display: none;
+    }
+    .nav-link-login {
+        padding-top: 30px!important;
     }
     .inner-container {
 
@@ -185,7 +304,7 @@
         height: auto !important;
         margin-top: 100px;
         background: $--bg-primary;
-        padding: 10px!important;;
+        padding: 40px 0 20px 0!important;
     }
     .logo-footer {
         margin-top: 5px;
@@ -195,5 +314,32 @@
         font-size: 12px;
         color: white;
     }
-
+    .lang-dropdown {
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .footer-icons-wrap {
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    .footer-section-title {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .footer-links-wrap {
+        > a{
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 5px 0;
+        }
+    }
+    .nav-link-lang {
+        display: none;
+    }
 </style>

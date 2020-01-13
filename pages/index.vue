@@ -6,13 +6,13 @@
                     <el-col class="banner-text-wrap">
                         <div class="free-title" >
                             <!--:xs="8" :sm="8" :md="8" :lg="8" :xl="8"-->
-                            Buy and Sell <br> <span class="banner-text-response">cryptocurrency near you</span>
+                            {{ $t('pages.main.banner.buy_sell') }} <br> <span class="banner-text-response">{{ $t('pages.main.banner.near') }}</span>
                         </div>
                         <div class="free-stat">
-                            <span>14109 cities and 249 countries including Ukraine</span>
+                            <span>{{ $t('pages.main.banner.locations') }}</span>
                         </div>
                         <el-row>
-                            <el-button class="banner-btn btn-shadow" type="success">Sign Up For Free</el-button>
+                            <el-button class="banner-btn btn-shadow" type="success">{{ $t('pages.main.banner.sign_up') }}</el-button>
                         </el-row>
                     </el-col>
                     <el-col class="banner-img-wrap">
@@ -32,13 +32,15 @@
                                     <img class="img-present" src="~/assets/images/money.png" alt="logo">
                                 </el-col>
                                 <el-col class="benefits-col" :offset="1" :md="17">
-                                    <div class="head-title-block">
-                                        Join our referral program
+                                    <div class="benefits-text-wrap">
+                                        <div class="head-title-block">
+                                            {{ $t('pages.main.benefits.join') }}
+                                        </div>
+                                        <p class="head-text-block">
+                                            {{ $t('pages.main.benefits.invite') }}
+                                        </p>
                                     </div>
-                                    <p class="head-text-block">
-                                        Invite your friends and earn up to 50% of commission!
-                                    </p>
-                                    <el-button class="benefits-btn" plain>Join now</el-button>
+                                    <el-button class="benefits-btn" plain>{{ $t('pages.main.benefits.join_button') }}</el-button>
                                 </el-col>
                             </el-row>
                         </el-card>
@@ -50,13 +52,15 @@
                                     <img class="img-present" src="~/assets/images/present.png" alt="logo">
                                 </el-col>
                                 <el-col class="benefits-col" :offset="1" :md="17">
-                                    <div class="head-title-block">
-                                        Win prizes
+                                    <div class="benefits-text-wrap">
+                                        <div class="head-title-block">
+                                            {{ $t('pages.main.benefits.win') }}
+                                        </div>
+                                        <p class="head-text-block">
+                                            {{ $t('pages.main.benefits.follow') }}
+                                        </p>
                                     </div>
-                                    <p class="head-text-block">
-                                        Join our community, follow the news and learn how to win prizes.
-                                    </p>
-                                    <el-button class="benefits-btn" plain>Join now</el-button>
+                                    <el-button class="benefits-btn" plain>{{ $t('pages.main.benefits.join_button') }}</el-button>
                                 </el-col>
                             </el-row>
                         </el-card>
@@ -66,34 +70,34 @@
         </el-row>
         <el-row class="sell-container">
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
-                <h1 class="title-section">Quick buy</h1>
+                <h1 class="title-section">{{ $t('pages.main.section_title.quick_buy') }}</h1>
                 <el-card class="box-card card-inputs">
                     <el-form :inline="false" :model="formInline" class="quick-buy-table">
                         <el-form-item label="">
-                            <el-select v-model="formInline.currency" placeholder="Currency" class="search-input">
+                            <el-select v-model="formInline.currency" :placeholder="$t('placeholders.currency')" class="search-input">
                                 <el-option label="BTB" value="shanghai"></el-option>
                                 <el-option label="DSA" value="beijing"></el-option>
                                 <el-option label="BVV" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input v-model="formInline.user" placeholder="Amount" class="search-input"></el-input>
+                            <el-input v-model="formInline.user" :placeholder="$t('placeholders.amount')" class="search-input"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-select v-model="formInline.region" placeholder="Country" class="search-input">
+                            <el-select v-model="formInline.region" :placeholder="$t('placeholders.country')" class="search-input">
                                 <el-option label="Ukraine" value="shanghai"></el-option>
                                 <el-option label="Belgium" value="beijing"></el-option>
                                 <el-option label="Austria" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-select v-model="formInline.region" placeholder="Payment" class="search-input">
+                            <el-select v-model="formInline.region" :placeholder="$t('placeholders.payment')" class="search-input">
                                 <el-option label="Other online payment" value="shanghai"></el-option>
                                 <el-option label="National bank transfer" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item class="quick-buy-btn-wrap">
-                            <el-button class="search-btn" type="primary" @click="onSubmit">Search</el-button>
+                            <el-button class="search-btn" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>
@@ -102,7 +106,7 @@
         <el-row>
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
                 <el-row>
-                    <h1 class="title-section">Buy online</h1>
+                    <h1 class="title-section">{{ $t('pages.main.section_title.buy_online') }}</h1>
                     <el-card class="box-card">
                         <el-table
                             :data="tableData"
@@ -110,7 +114,7 @@
                             <el-table-column
                                 prop="buyer"
                                 width="235"
-                                label="Buyer">
+                                :label="$t('placeholders.buyer')">
                                 <template slot-scope="scope">
                                     <el-row>
                                         <el-col :span="7">
@@ -121,10 +125,10 @@
                                                 {{scope.row.buyer.name}}
                                             </div>
                                             <div v-if="scope.row.buyer.status" class="table-online">
-                                                <el-tag size="mini" type="success" effect="plain">Online</el-tag>
+                                                <el-tag size="mini" type="success" effect="plain">{{$t('tags.online')}}</el-tag>
                                             </div>
                                             <div v-else class="table-last-visit">
-                                                Last visit at: {{scope.row.buyer.last_visit}}
+                                                {{$t('placeholders.last_visit')}}: {{scope.row.buyer.last_visit}}
                                             </div>
                                         </el-col>
                                     </el-row>
@@ -135,7 +139,7 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Currency">
+                                :label="$t('placeholders.currency')">
                                 <template slot-scope="scope">
                                     <el-tag effect="plain" type="warning" size="mini">{{scope.row.currency}}</el-tag>
                                 </template>
@@ -145,13 +149,13 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Ratting">
+                                :label="$t('placeholders.ratting')">
                             </el-table-column>
                             <el-table-column
                                 width="200"
                                 sortable
                                 prop="payment_system"
-                                label="Payment">
+                                :label="$t('placeholders.payment')">
                                 <template slot-scope="scope">
                                     <a class="table-link" href="#">{{scope.row.payment_system}}</a>
                                 </template>
@@ -161,7 +165,7 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Country">
+                                :label="$t('placeholders.country')">
                                 <template slot-scope="scope">
                                     <a class="table-link" href="#">{{scope.row.country}}</a>
                                 </template>
@@ -170,21 +174,21 @@
                                 prop="price"
                                 align="center"
                                 sortable
-                                label="Price">
+                                :label="$t('placeholders.price')">
                             </el-table-column>
                             <el-table-column
                                 prop="limits"
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Limits">
+                                :label="$t('placeholders.limits')">
                             </el-table-column>
                             <el-table-column
                                 prop=""
                                 align="right"
                                 label="">
                                 <template slot-scope="scope">
-                                    <el-button plain type="primary" size="mini">buy</el-button>
+                                    <el-button plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -194,34 +198,34 @@
         </el-row>
         <el-row class="buy-container">
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
-                <h1 class="title-section">Quick sell</h1>
+                <h1 class="title-section">{{ $t('pages.main.section_title.quick_sell') }}</h1>
                 <el-card class="box-card card-inputs">
                     <el-form :inline="isInline" :model="formInline" class="quick-buy-table">
                         <el-form-item label="">
-                            <el-select v-model="formInline.currency" placeholder="Currency" class="search-input">
+                            <el-select v-model="formInline.currency" :placeholder="$t('placeholders.currency')" class="search-input">
                                 <el-option label="BTB" value="shanghai"></el-option>
                                 <el-option label="DSA" value="beijing"></el-option>
                                 <el-option label="BVV" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input v-model="formInline.user" placeholder="Amount" class="search-input"></el-input>
+                            <el-input v-model="formInline.user" :placeholder="$t('placeholders.amount')" class="search-input"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-select v-model="formInline.region" placeholder="Country" class="search-input">
+                            <el-select v-model="formInline.region" :placeholder="$t('placeholders.country')" class="search-input">
                                 <el-option label="Ukraine" value="shanghai"></el-option>
                                 <el-option label="Belgium" value="beijing"></el-option>
                                 <el-option label="Austria" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-select v-model="formInline.region" placeholder="Payment" class="search-input">
+                            <el-select v-model="formInline.region" :placeholder="$t('placeholders.payment')" class="search-input">
                                 <el-option label="Other online payment" value="shanghai"></el-option>
                                 <el-option label="National bank transfer" value="beijing"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item class="quick-buy-btn-wrap">
-                            <el-button class="search-btn" type="primary" @click="onSubmit">Search</el-button>
+                            <el-button class="search-btn" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>
@@ -230,7 +234,7 @@
         <el-row>
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
                 <el-row>
-                    <h1 class="title-section">Sell online</h1>
+                    <h1 class="title-section">{{ $t('pages.main.section_title.sell_online') }}</h1>
                     <el-card class="box-card">
                         <el-table
                             :data="tableData"
@@ -238,7 +242,7 @@
                             <el-table-column
                                 prop="buyer"
                                 width="235"
-                                label="Buyer">
+                                :label="$t('placeholders.buyer')">
                                 <template slot-scope="scope">
                                     <el-row>
                                         <el-col :span="7">
@@ -249,10 +253,10 @@
                                                 {{scope.row.buyer.name}}
                                             </div>
                                             <div v-if="scope.row.buyer.status" class="table-online">
-                                                <el-tag size="mini" type="success" effect="plain">Online</el-tag>
+                                                <el-tag size="mini" type="success" effect="plain">{{$t('tags.online')}}</el-tag>
                                             </div>
                                             <div v-else class="table-last-visit">
-                                                Last visit at: {{scope.row.buyer.last_visit}}
+                                                {{$t('placeholders.last_visit')}}: {{scope.row.buyer.last_visit}}
                                             </div>
                                         </el-col>
                                     </el-row>
@@ -263,7 +267,7 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Currency">
+                                :label="$t('placeholders.currency')">
                                 <template slot-scope="scope">
                                     <el-tag effect="plain" type="warning" size="mini">{{scope.row.currency}}</el-tag>
                                 </template>
@@ -273,13 +277,13 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Ratting">
+                                :label="$t('placeholders.ratting')">
                             </el-table-column>
                             <el-table-column
                                 width="200"
                                 sortable
                                 prop="payment_system"
-                                label="Payment">
+                                :label="$t('placeholders.payment')">
                                 <template slot-scope="scope">
                                     <a class="table-link" href="#">{{scope.row.payment_system}}</a>
                                 </template>
@@ -289,7 +293,7 @@
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Country">
+                                :label="$t('placeholders.country')">
                                 <template slot-scope="scope">
                                     <a class="table-link" href="#">{{scope.row.country}}</a>
                                 </template>
@@ -298,21 +302,21 @@
                                 prop="price"
                                 align="center"
                                 sortable
-                                label="Price">
+                                :label="$t('placeholders.price')">
                             </el-table-column>
                             <el-table-column
                                 prop="limits"
                                 width="120"
                                 align="center"
                                 sortable
-                                label="Limits">
+                                :label="$t('placeholders.limits')">
                             </el-table-column>
                             <el-table-column
                                 prop=""
                                 align="right"
                                 label="">
                                 <template slot-scope="scope">
-                                    <el-button plain type="primary" size="mini">buy</el-button>
+                                    <el-button plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -426,20 +430,27 @@
     }
     .banner-img-wrap {
         position: relative;
-        width: 50%;
+        width: 30%;
         right: 150px;
     }
+    .img-banner {
+        right: 250px;
+        position: relative;
+    }
     .banner-text-wrap {
-        width: 50%;
+        width: 70%;
         margin-top: 50px;
     }
     .banner-btn {
-        width: 70%;
+        position: relative;
+        z-index: 2;
+        width: 40%;
         height: 60px;
         font-size: 22px;
         font-weight: 800;
     }
     .head-title-block {
+        //height: 50px;
         font-style: normal;
         font-weight: bold;
         font-size: 22px;
@@ -455,9 +466,12 @@
     .buy-container {
         margin-top: 70px;
     }
+    .benefits-text-wrap {
+        height: 95px;
+    }
     .head-text-block {
-        height: 70px;
-        padding-top: 10px;
+        //height: 52px;
+       // padding-top: 10px;
         font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: normal;
