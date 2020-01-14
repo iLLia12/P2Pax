@@ -35,7 +35,8 @@ export default {
         limits: "Лимит",
         buyer: "Покупатель",
         amount:"Количество",
-        last_visit:"Был в сети в"
+        last_visit:"Был в сети в",
+        seller: "Продавец",
     },
     buttons:{
         search:"Поиск",

@@ -107,7 +107,7 @@
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
                 <el-row>
                     <h1 class="title-section">{{ $t('pages.main.section_title.buy_online') }}</h1>
-                    <el-card class="box-card">
+                    <el-card class="box-card main-page-table-card">
                         <el-table
                             :data="tableData"
                             style="width: 100%">
@@ -193,6 +193,64 @@
                             </el-table-column>
                         </el-table>
                     </el-card>
+                    <el-card shadow="always" class="card-mobile-proposals">
+                        <div v-for="buyer in tableData" class="buyer-card-inner-wrap">
+                            <el-row class="buyer-row">
+                                <el-col :xs="24" :sm="24" :md="24">
+                                    <el-row>
+                                        <el-col :xs="8" :sm="8" :md="8" class="table-title">
+                                            {{$t('placeholders.buyer')}}
+                                        </el-col>
+                                        <el-col :xs="14" :sm="10" :md="10">
+                                            <el-row>
+                                                <el-col :xs="8" :sm="6" :md="6">
+                                                    <img class="table-avatar" src="~/assets/images/unknown_user.png" alt="">
+                                                </el-col>
+                                                <el-col :xs="16" :sm="10" :md="10" class="buyer-col-wrap">
+                                                    <div>{{buyer.buyer.name}}</div>
+                                                    <div v-if="buyer.buyer.status" class="table-online">
+                                                        <el-tag size="mini" type="success" effect="plain">{{$t('tags.online')}}</el-tag>
+                                                    </div>
+                                                    <div v-else class="table-last-visit">
+                                                        {{$t('placeholders.last_visit')}}: {{buyer.buyer.last_visit}}
+                                                    </div>
+                                                </el-col>
+                                            </el-row>
+                                        </el-col>
+                                    </el-row>
+                                </el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.currency')}}</el-col>
+                                <el-col :span="14">{{buyer.currency}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.ratting')}}</el-col>
+                                <el-col :span="14">{{buyer.ratting}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.payment')}}</el-col>
+                                <el-col :span="14" class="card-link">{{buyer.payment_system}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.country')}}</el-col>
+                                <el-col :span="14">{{buyer.country}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.price')}}</el-col>
+                                <el-col :span="14">{{buyer.price}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.limits')}}</el-col>
+                                <el-col :span="14">{{buyer.limits}}</el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col>
+                                    <el-button style="width: 100%" plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
+                                </el-col>
+                            </el-row>
+                        </div>
+                    </el-card>
                 </el-row>
             </el-col>
         </el-row>
@@ -235,7 +293,7 @@
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
                 <el-row>
                     <h1 class="title-section">{{ $t('pages.main.section_title.sell_online') }}</h1>
-                    <el-card class="box-card">
+                    <el-card class="box-card main-page-table-card">
                         <el-table
                             :data="tableData"
                             style="width: 100%">
@@ -320,6 +378,64 @@
                                 </template>
                             </el-table-column>
                         </el-table>
+                    </el-card>
+                    <el-card shadow="always" class="card-mobile-proposals">
+                        <div v-for="buyer in tableData" class="buyer-card-inner-wrap">
+                            <el-row class="buyer-row">
+                               <el-col :xs="24" :sm="24" :md="24">
+                                   <el-row>
+                                       <el-col :xs="8" :sm="8" :md="8" class="table-title">
+                                           {{$t('placeholders.seller')}}
+                                       </el-col>
+                                       <el-col :xs="14" :sm="10" :md="10">
+                                           <el-row>
+                                               <el-col :xs="8" :sm="6" :md="6">
+                                                   <img class="table-avatar" src="~/assets/images/unknown_user.png" alt="">
+                                               </el-col>
+                                               <el-col :xs="16" :sm="10" :md="10" class="buyer-col-wrap">
+                                                   <div>{{buyer.buyer.name}}</div>
+                                                   <div v-if="buyer.buyer.status" class="table-online">
+                                                       <el-tag size="mini" type="success" effect="plain">{{$t('tags.online')}}</el-tag>
+                                                   </div>
+                                                   <div v-else class="table-last-visit">
+                                                       {{$t('placeholders.last_visit')}}: {{buyer.buyer.last_visit}}
+                                                   </div>
+                                               </el-col>
+                                           </el-row>
+                                       </el-col>
+                                   </el-row>
+                               </el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.currency')}}</el-col>
+                                <el-col :span="14">{{buyer.currency}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.ratting')}}</el-col>
+                                <el-col :span="14">{{buyer.ratting}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.payment')}}</el-col>
+                                <el-col :span="14" class="card-link">{{buyer.payment_system}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.country')}}</el-col>
+                                <el-col :span="14">{{buyer.country}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.price')}}</el-col>
+                                <el-col :span="14">{{buyer.price}}</el-col>
+                            </el-row>
+                            <el-row class="card-row">
+                                <el-col :span="8">{{$t('placeholders.limits')}}</el-col>
+                                <el-col :span="14">{{buyer.limits}}</el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col>
+                                    <el-button style="width: 100%" plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
+                                </el-col>
+                            </el-row>
+                        </div>
                     </el-card>
                 </el-row>
             </el-col>
@@ -509,5 +625,37 @@
     .title-section {
         margin-bottom: 20px;
         color: #c5c8d0;
+    }
+    .card-mobile-proposals {
+        display: none;
+    }
+    .buyer-card-inner-wrap {
+        padding-bottom: 20px;
+    }
+    .buyer-row {
+        background: $--bg-primary;
+        color: white;
+        padding:  15px 20px ;
+    }
+    .buyer-name {
+        font-weight: 700;
+        padding-top: 5px;
+    }
+    .card-link {
+        text-decoration: none;
+        color: #409EFF;
+    }
+    .buyer-title {
+        padding-top: 15px;
+        font-weight: 700;
+    }
+    .card-row {
+        padding-left: 20px;
+    }
+    .buyer-col-wrap {
+        padding-top: 5px;
+    }
+    .table-title {
+        padding-top: 15px;
     }
 </style>

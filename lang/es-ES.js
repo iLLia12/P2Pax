@@ -15,7 +15,8 @@ export default {
         limits: "Límites",
         buyer: "Comprador",
         amount:"Cantidad",
-        last_visit:"Última visita a las"
+        last_visit:"Última visita a las",
+        seller: "Vendedor",
     },
     hooter:{
         all_right:"Todos los derechos reservados",

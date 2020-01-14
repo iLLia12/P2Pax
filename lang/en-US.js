@@ -16,6 +16,7 @@ export default {
         price: "Price",
         limits: "Limits",
         buyer: "Buyer",
+        seller: "Seller",
         amount:"Amount",
         last_visit:"Last visit at"
     },

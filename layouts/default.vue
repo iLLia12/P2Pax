@@ -25,57 +25,73 @@
                                         <nuxt-link
                                             v-if="$i18n.locale !== 'en'"
                                             :to="switchLocalePath('en')">
-                                            <div :class="getLangIconClass('en')" @click="showPopover"></div>
+                                            <span class="nav-lang-link">
+                                                en
+                                            </span>
                                         </nuxt-link>
                                         <nuxt-link
                                             v-if="$i18n.locale !== 'ru'"
                                             :to="switchLocalePath('ru')">
-                                            <div :class="getLangIconClass('ru')" @click="showPopover"></div>
+                                            <span class="nav-lang-link">
+                                                ru
+                                            </span>
                                         </nuxt-link>
                                         <nuxt-link
                                             v-if="$i18n.locale !== 'es'"
                                             :to="switchLocalePath('es')">
-                                            <div :class="getLangIconClass('es')" @click="showPopover"></div>
+                                            <span class="nav-lang-link">
+                                                es
+                                            </span>
                                         </nuxt-link>
                                         <nuxt-link
                                             v-if="$i18n.locale !== 'zh'"
                                             :to="switchLocalePath('zh')">
-                                            <div :class="getLangIconClass('zh')" @click="showPopover"></div>
+                                            <span class="nav-lang-link">
+                                                zh
+                                            </span>
                                         </nuxt-link>
                                     </div>
                                 </el-menu-item>
                                 <div class="nav-btn-wrap">
                                     <el-dropdown class="lang-dropdown">
                                         <span class="el-dropdown-link">
-                                            <div :class="langFlagIcon" @click="showPopover" id="changeLangButton"></div>
+                                            {{this.$i18n.locale}}
                                         </span>
                                         <el-dropdown-menu slot="dropdown">
                                             <el-dropdown-item>
                                                 <nuxt-link
                                                     v-if="$i18n.locale !== 'es'"
                                                     :to="switchLocalePath('es')">
-                                                    <div :class="getLangIconClass('es')" @click="showPopover"></div>
+                                                    <span class="nav-lang-link">
+                                                        es
+                                                    </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                             <el-dropdown-item>
                                                 <nuxt-link
                                                     v-if="$i18n.locale !== 'en'"
                                                     :to="switchLocalePath('en')">
-                                                    <div :class="getLangIconClass('en')" @click="showPopover"></div>
+                                                    <span class="nav-lang-link">
+                                                en
+                                            </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                             <el-dropdown-item>
                                                 <nuxt-link
                                                     v-if="$i18n.locale !== 'ru'"
                                                     :to="switchLocalePath('ru')">
-                                                    <div :class="getLangIconClass('ru')" @click="showPopover"></div>
+                                                    <span class="nav-lang-link">
+                                                ru
+                                            </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                             <el-dropdown-item>
                                                 <nuxt-link
                                                     v-if="$i18n.locale !== 'zh'"
                                                     :to="switchLocalePath('zh')">
-                                                    <div :class="getLangIconClass('zh')" @click="showPopover"></div>
+                                                    <span class="nav-lang-link">
+                                                zh
+                                            </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                         </el-dropdown-menu>
@@ -270,6 +286,9 @@
     }
     .links {
         padding-top: 15px;
+    }
+    .nav-lang-link {
+        color: #409EFF;
     }
     .nav-links-wrap {
         display: flex;

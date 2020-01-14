@@ -15,7 +15,8 @@ export default {
         limits: "限度",
         buyer: "买方",
         amount:"量",
-        last_visit:"最后一次访问"
+        last_visit:"最后一次访问",
+        seller: "卖方",
     },
     hooter:{
         all_right:"版权所有",

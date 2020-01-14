@@ -103,6 +103,12 @@ button, input {
         text-align: center;
         margin-top: 10px;
     }
+    .main-page-table-card {
+        display: none;
+    }
+    .card-mobile-proposals {
+        display: block!important;
+    }
 }
 @media (max-width: 1700px){
     .banner-btn {
@@ -183,7 +189,19 @@ button, input {
         display: flex !important;
         border-bottom-color: transparent;
         padding: 20px!important;
-        margin-top: 20px!important;
         justify-content: space-evenly !important;
+    }
+    .buyer-row {
+        padding-right: 0!important;
+    }
+    .buyer-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .table-title {
+        padding-top: 15px!important;
+    }
+    .table-avatar {
+        padding-top: 5px;
     }
 }
