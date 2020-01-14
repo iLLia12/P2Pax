@@ -5,7 +5,6 @@
                 <el-row class="">
                     <el-col class="banner-text-wrap">
                         <div class="free-title" >
-                            <!--:xs="8" :sm="8" :md="8" :lg="8" :xl="8"-->
                             {{ $t('pages.main.banner.buy_sell') }} <br> <span class="banner-text-response">{{ $t('pages.main.banner.near') }}</span>
                         </div>
                         <div class="free-stat">
@@ -16,7 +15,6 @@
                         </el-row>
                     </el-col>
                     <el-col class="banner-img-wrap">
-                        <!--:xs="12" :sm="12" :md="12" :lg="12" :xl="12"-->
                         <img class="img-banner" src="~/assets/images/title-pic.png" alt="logo">
                     </el-col>
                 </el-row>

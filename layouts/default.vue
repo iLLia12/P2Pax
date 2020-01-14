@@ -7,20 +7,26 @@
                         <el-row>
                             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container nav-container">
                                 <el-menu-item>
-                                    <Logo />
+                                    <n-link to="/" no-prefetch>
+                                        <Logo />
+                                    </n-link>
                                 </el-menu-item>
                                 <el-menu-item class="nav-link">
-                                    {{ $t('top_nav.buy') }}
+                                    <n-link class="nav-link" to="#" no-prefetch>{{ $t('top_nav.buy') }}</n-link>
                                 </el-menu-item>
                                 <el-menu-item class="nav-link">
-                                    {{ $t('top_nav.sell') }}
+                                    <n-link class="nav-link" to="#" no-prefetch>{{ $t('top_nav.sell') }}</n-link>
                                 </el-menu-item>
-                                <el-menu-item class="nav-link">
-                                    {{ $t('top_nav.post_trade') }}
+                                <el-menu-item>
+                                    <n-link class="nav-link" to="/trade/create" no-prefetch>{{ $t('top_nav.post_trade') }}</n-link>
                                 </el-menu-item>
                                 <el-menu-item class="nav-link nav-link-login">
-                                    <el-button class="btn-shadow" type="success">{{ $t('top_nav.login') }}</el-button>
-                                    <el-button class="btn-shadow" type="primary">{{ $t('top_nav.registration') }}</el-button>
+                                    <n-link to="/auth/login" no-prefetch>
+                                        <el-button class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
+                                    </n-link>
+                                    <n-link to="/auth/registration" no-prefetch>
+                                        <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
+                                    </n-link>
                                     <div class="nav-link-lang">
                                         <nuxt-link
                                             v-if="$i18n.locale !== 'en'"
@@ -72,8 +78,8 @@
                                                     v-if="$i18n.locale !== 'en'"
                                                     :to="switchLocalePath('en')">
                                                     <span class="nav-lang-link">
-                                                en
-                                            </span>
+                                                        en
+                                                    </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                             <el-dropdown-item>
@@ -81,8 +87,8 @@
                                                     v-if="$i18n.locale !== 'ru'"
                                                     :to="switchLocalePath('ru')">
                                                     <span class="nav-lang-link">
-                                                ru
-                                            </span>
+                                                        ru
+                                                    </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                             <el-dropdown-item>
@@ -90,14 +96,18 @@
                                                     v-if="$i18n.locale !== 'zh'"
                                                     :to="switchLocalePath('zh')">
                                                     <span class="nav-lang-link">
-                                                zh
-                                            </span>
+                                                        zh
+                                                    </span>
                                                 </nuxt-link>
                                             </el-dropdown-item>
                                         </el-dropdown-menu>
                                     </el-dropdown>
-                                    <el-button class="btn-shadow" type="primary">{{ $t('top_nav.login') }}</el-button>
-                                    <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
+                                    <n-link to="/auth/login" no-prefetch>
+                                        <el-button class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
+                                    </n-link>
+                                    <n-link to="/auth/registration" no-prefetch>
+                                        <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
+                                    </n-link>
                                 </div>
                             </el-col>
                         </el-row>
@@ -308,6 +318,7 @@
         width: 120px;
         text-align: center;
         color: #409EFF;
+        text-decoration: none;
     }
     .img-logo {
         width: 100px;
@@ -360,5 +371,8 @@
     }
     .nav-link-lang {
         display: none;
+    }
+    .login-btn {
+        margin-right: 10px;
     }
 </style>
