@@ -103,6 +103,7 @@ export default {
             start_time:"Start time",
             end_time:"End time",
             advertisement_rules:"Advertisement rules and requirements",
+            margin:"Margin % (profit)",
             btn:{
                 btc:"0 BTC"
             },

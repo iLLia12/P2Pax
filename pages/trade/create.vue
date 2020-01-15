@@ -48,7 +48,11 @@
                 </el-collapse>
                 <el-card class="box-card box-card-create-trade" :body-style="{height:'175px', borderRadius:'0'}">
                     <el-form :label-position="labelPosition" label-width="220px" :model="formLabelAlign">
-                        <el-form-item :label="$t('placeholders.resources')" prop="resource">
+                        <el-form-item label="" prop="resource">
+                            <span>{{$t('placeholders.resources')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.a')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-radio-group v-model="formLabelAlign.resource">
@@ -159,7 +163,11 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item :label="$t('pages.post_trade.rate_equation')">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.rate_equation')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.b')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.region"></el-input>
@@ -213,7 +221,11 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item :label="$t('pages.post_trade.min_price')">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.min_price')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.c')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
@@ -225,7 +237,11 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Margin % (profit)">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.margin')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.d')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
@@ -237,7 +253,11 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item :label="$t('pages.post_trade.min_transaction')">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.min_transaction')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.e')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
@@ -249,7 +269,11 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item :label="$t('pages.post_trade.max_transaction')">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.max_transaction')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.f')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
@@ -264,20 +288,22 @@
                         <el-form-item label="">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
-                                    <el-checkbox v-model="formLabelAlign.checked">
-                                    </el-checkbox>
-                                    <div class="checkbox-adjust">
+                                    <el-row>
+                                        <el-checkbox v-model="formLabelAlign.checked">
+                                        </el-checkbox>
                                         {{$t('pages.post_trade.hits.g')}}
-                                    </div>
-                                </el-col>
-                                <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
-                                    <div class="form-hits">
-                                        {{$t('pages.post_trade.hits.i')}}
-                                    </div>
+                                        <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.i')" placement="top-start">
+                                            <i class="el-icon-question icon-help"></i>
+                                        </el-tooltip>
+                                    </el-row>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item :label="$t('pages.post_trade.terms_of_trade')">
+                        <el-form-item label="">
+                            <span>{{$t('pages.post_trade.terms_of_trade')}}</span>
+                            <el-tooltip class="item" effect="dark" :content="$t('pages.post_trade.hits.j')" placement="top-start">
+                                <i class="el-icon-question icon-help"></i>
+                            </el-tooltip>
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input
@@ -505,8 +531,11 @@
             };
         },
         computed: {
+            isMobileSize() {
+                return (typeof window != "undefined") && window.innerWidth < 992;
+            },
             labelPosition() {
-                return (typeof window != "undefined") && window.innerWidth < 992 ? 'top' :'right';
+                return this.isMobileSize ? 'top' :'right';
             }
         },
         mounted() {
@@ -528,7 +557,7 @@
                 } else {
                     this.options = [];
                 }
-            }
+            },
         }
     }
 </script>
@@ -609,13 +638,11 @@
         background: #3b8070;
         border-radius: 0;
         height: auto;
-       //padding-bottom: 10px;
     }
     .follow-col {
         background: dodgerblue;
         border-radius: 0;
         height: auto;
-       // padding-bottom: 10px;
     }
     .join-col-text, .follow-col-text {
         height: 100%;
@@ -642,7 +669,7 @@
         line-height: 1;
         margin-bottom: 5px;
     }
-    .el-checkbox {
-
+    .icon-help {
+        display: none;
     }
 </style>

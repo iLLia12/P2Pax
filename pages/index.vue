@@ -95,7 +95,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item class="quick-buy-btn-wrap">
-                            <el-button class="search-btn" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
+                            <el-button class="search-btn btn-pink" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>
@@ -281,7 +281,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item class="quick-buy-btn-wrap">
-                            <el-button class="search-btn" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
+                            <el-button class="search-btn btn-pink" type="primary" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>

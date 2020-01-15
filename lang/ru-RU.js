@@ -99,6 +99,7 @@ export default {
             start_time:"Начальное время",
             end_time:"Время окончания",
             advertisement_rules:"Правила и требования к рекламе",
+            margin:"Margin % (profit)",
             btn:{
                 btc:"0 BTC"
             },

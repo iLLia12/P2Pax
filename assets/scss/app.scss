@@ -86,13 +86,18 @@ button, input {
     width: 15px;
     height: 15px;
 }
-
-
+.icon-help {
+    color: #909399;
+    display: none;
+}
+.el-tooltip__popper {
+    width: 60%;
+}
+.btn-pink {
+    background-color: $--color-pink;
+    border-color: $--color-pink;
+}
 @media (max-width: 1920px){
-    .icon-exchange-wrap {
-        /*padding-top: 80px!important;
-        width: 70px!important;*/
-    }
     .icon-exchange-outer {
         display: flex;
         justify-content: center;
@@ -146,7 +151,6 @@ button, input {
     .join-col {
         height: 90px!important;
     }
-
     .follow-col {
         height: 90px!important;
     }
@@ -161,6 +165,16 @@ button, input {
     }
     .el-range-separator {
         width: 15%!important;
+    }
+}
+@media (max-width: 990px){
+    .icon-help {
+        color: #909399;
+        display: inline-block!important;
+        cursor: pointer;
+    }
+    .form-hits {
+        display: none;
     }
 }
 @media (max-width: 950px){
