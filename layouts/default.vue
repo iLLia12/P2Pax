@@ -130,10 +130,10 @@
                         <el-col :span="5">
                             <img class="logo-footer mb-10" src="~/assets/images/logo-2.png" alt="">
                             <div class="footer-text-small mb-10">
-                                © p2pax.com {{ $t('hooter.all_right') }}
+                                © p2pax.com {{ $t('footer.all_right') }}
                             </div>
                             <div class="footer-text-small mb-10">
-                                {{ $t('hooter.follow_us') }}:
+                                {{ $t('footer.follow_us') }}:
                             </div>
                             <div class="footer-icons-wrap mb-10">
                                 <div class="icon icon_facebook icon-sm"></div>
@@ -144,31 +144,31 @@
                             </div>
                         </el-col>
                         <!--<el-col :span="7">
-                            <p class="footer-section-title text-center">{{ $t('hooter.actions') }}</p>
+                            <p class="footer-section-title text-center">{{ $t('footer.actions') }}</p>
                             <div class="footer-links-wrap">
-                                <nuxt-link class="footer-link text-center" to="/buy">{{ $t('hooter.buy') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.sell') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.trade_center') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.quick_transfer') }}</nuxt-link>
+                                <nuxt-link class="footer-link text-center" to="/buy">{{ $t('footer.buy') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('footer.sell') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('footer.trade_center') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('footer.quick_transfer') }}</nuxt-link>
                             </div>
                         </el-col>
                         <el-col :span="7">
-                            <p class="footer-section-title text-center">{{ $t('hooter.about') }}</p>
+                            <p class="footer-section-title text-center">{{ $t('footer.about') }}</p>
                             <div class="footer-links-wrap">
-                                <nuxt-link class="footer-link  text-center" to="/buy">{{ $t('hooter.terms') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.about_us') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('hooter.partnership') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/buy">{{ $t('footer.terms') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('footer.about_us') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-center" to="/sell">{{ $t('footer.partnership') }}</nuxt-link>
                             </div>
                         </el-col>
                         <el-col :span="7">
-                            <p class="footer-section-title text-right">{{ $t('hooter.support') }}</p>
+                            <p class="footer-section-title text-right">{{ $t('footer.support') }}</p>
                             <div class="footer-links-wrap">
-                                <nuxt-link class="footer-link  text-right" to="/buy">{{ $t('hooter.support_request') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.faq') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.formula') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.forget_password') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.forget_double_auth') }}</nuxt-link>
-                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('hooter.fishing') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/buy">{{ $t('footer.support_request') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('footer.faq') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('footer.formula') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('footer.forget_password') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('footer.forget_double_auth') }}</nuxt-link>
+                                <nuxt-link class="footer-link  text-right" to="/sell">{{ $t('footer.fishing') }}</nuxt-link>
                             </div>
                         </el-col>-->
                     </el-row>

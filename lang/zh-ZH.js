@@ -18,7 +18,7 @@ export default {
         last_visit:"最后一次访问",
         seller: "卖方",
     },
-    hooter:{
+    footer:{
         all_right:"版权所有",
         follow_us:"跟着我们",
         actions:"动作",

@@ -86,6 +86,19 @@ button, input {
     width: 15px;
     height: 15px;
 }
+
+
+@media (max-width: 1920px){
+    .icon-exchange-wrap {
+        /*padding-top: 80px!important;
+        width: 70px!important;*/
+    }
+    .icon-exchange-outer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 1700px){
     .benefits-col {
         display: block;
@@ -109,8 +122,6 @@ button, input {
     .card-mobile-proposals {
         display: block!important;
     }
-}
-@media (max-width: 1700px){
     .banner-btn {
         width: 60%!important;
     }
@@ -124,10 +135,32 @@ button, input {
     .banner-text-response{
         font-size: 30px;
     }
+    .proposal-btn {
+        padding: 12px 10px;
+    }
 }
 @media (max-width: 1200px){
     .inner-container {
         padding: 0 30px;
+    }
+    .join-col {
+        height: 90px!important;
+    }
+
+    .follow-col {
+        height: 90px!important;
+    }
+    .proposal-btn-wrap {
+        padding: 5px 10px 0 10px!important;
+    }
+    .bg-img-left, .bg-img-right {
+        height: 90px!important;
+    }
+    .advertisement-rules {
+        margin: 20px 0 20px 0!important;
+    }
+    .el-range-separator {
+        width: 15%;
     }
 }
 @media (max-width: 950px){
@@ -139,6 +172,30 @@ button, input {
     }
     .free-stat, .free-title {
         text-align: center;
+    }
+    .el-form-item__content {
+        margin-left: 0!important;
+    }
+    .el-form-item__label {
+        text-align:left;
+        float:none;
+        line-height: 0;
+    }
+    .form-hits {
+        margin-top: 2px;
+    }
+    .box-card-create-trade {
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+    }
+    .el-collapse-item__header {
+        line-height: 20px;
+    }
+    .el-footer {
+        margin-top: 40px;
+    }
+    .create-trade-btn {
+        width: 100%;
     }
 }
 @media (max-width: 768px){
@@ -203,5 +260,17 @@ button, input {
     }
     .table-avatar {
         padding-top: 5px;
+    }
+    .bg-img-right {
+        height: 110px!important;
+    }
+    .follow-col {
+        height: 110px !important;
+    }
+    .bg-img-left {
+        height: 110px!important;
+    }
+    .join-col {
+        height: 110px !important;
     }
 }

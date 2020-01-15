@@ -18,7 +18,7 @@ export default {
         last_visit:"Última visita a las",
         seller: "Vendedor",
     },
-    hooter:{
+    footer:{
         all_right:"Todos los derechos reservados",
         follow_us:"Síguenos",
         actions:"COMPORTAMIENTO",

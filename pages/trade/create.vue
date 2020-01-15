@@ -6,11 +6,11 @@
                     <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" class="join-col">
                         <div class="bg-img-left">
                             <el-row>
-                                <el-col :xs="24" :sm="24" :md="24" :lg="19" :xl="19" class="join-col-text">
-                                    Join our referral program and receive bonuses
+                                <el-col :xs="24" :sm="24" :md="24" :lg="18" :xl="19" class="join-col-text">
+                                    {{ $t('pages.post_trade.join_our_referral_program') }}
                                 </el-col>
-                                <el-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5" class="proposal-btn-wrap">
-                                    <el-button plain class="proposal-btn">Join now</el-button>
+                                <el-col :xs="24" :sm="24" :md="24" :lg="6" :xl="5" class="proposal-btn-wrap">
+                                    <el-button plain class="proposal-btn">{{ $t('pages.post_trade.join_btn') }}</el-button>
                                 </el-col>
                             </el-row>
                         </div>
@@ -19,10 +19,10 @@
                         <div class="bg-img-right">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="24" :lg="19" :xl="19" class="follow-col-text">
-                                    Follow our promotions and get discounts
+                                    {{ $t('pages.post_trade.follow_our_promotions') }}
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5" class="proposal-btn-wrap">
-                                    <el-button plain class="proposal-btn">More</el-button>
+                                    <el-button plain class="proposal-btn">{{ $t('pages.post_trade.more') }}</el-button>
                                 </el-col>
                             </el-row>
                         </div>
@@ -31,24 +31,24 @@
             </el-col>
             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
                 <el-collapse v-model="activeNames" class="advertisement-rules">
-                    <el-collapse-item title="Advertisement rules and requirements" name="1" class="advertisement-rules-collapse">
+                    <el-collapse-item :title="$t('pages.post_trade.advertisement_rules')" name="1" class="advertisement-rules-collapse">
                         <ul>
-                            <li class="li-rules">To submit ads, you need to have Bitcoins in the P2PAX.COM wallet.</li>
-                            <li class="li-rules">To be able to use certain payment methods, you need to pass an identity check. Only after that your ads will be visible</li>
-                            <li class="li-rules">If you did not find the payment system you are interested in, you can send the corresponding ticket to the support or fill out the appropriate form by clicking on the link</li>
-                            <li class="li-rules">The fee for each user who placed an ad for every deal is 0.4% of the total amount of the transaction. You can find information on all fees on the relevant page of our website.</li>
-                            <li class="li-rules">Once a trade is open you can not change the price, except when there is a clear mistake in the pricing.</li>
-                            <li class="li-rules">You are not allowed to buy or sell bitcoins on behalf of other persons (brokerage)</li>
-                            <li class="li-rules">You can only use payment accounts registered in your own name (payments from third parties are prohibited!)</li>
-                            <li class="li-rules">You must specify your payment details in the ad or trade chat. Payment details specified in the ad are available to counterparties, only after you confirm the request for an exchange</li>
-                            <li class="li-rules">All communication must happen on P2PAX.COM</li>
-                            <li class="li-rules">Payment methods marked as "High risk" involve a significant risk of fraud. Be cautious and always check the identity of your trade partners if you use a high-risk payment method</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.a') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.b') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.c') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.d') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.e') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.f') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.g') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.i') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.j') }}</li>
+                            <li class="li-rules">{{ $t('pages.post_trade.li.u') }}</li>
                         </ul>
                     </el-collapse-item>
                 </el-collapse>
                 <el-card class="box-card box-card-create-trade" :body-style="{height:'175px', borderRadius:'0'}">
-                    <el-form label-position="right" label-width="220px" :model="formLabelAlign">
-                        <el-form-item label="Resources" prop="resource">
+                    <el-form :label-position="labelPosition" label-width="220px" :model="formLabelAlign">
+                        <el-form-item :label="$t('placeholders.resources')" prop="resource">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-radio-group v-model="formLabelAlign.resource">
@@ -58,12 +58,12 @@
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        What kind of trade advertisement do you wish to create? If you wish to sell bitcoins make sure you have bitcoins in your P2PAX wallet.
+                                        {{ $t('pages.post_trade.hits.a') }}
                                     </div>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Location" prop="resource">
+                        <el-form-item :label="$t('placeholders.location')" prop="resource">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-select
@@ -71,7 +71,7 @@
                                         filterable
                                         remote
                                         reserve-keyword
-                                        placeholder="Please enter a keyword"
+                                        :placeholder="$t('placeholders.please_enter_a_keyword')"
                                         :remote-method="remoteMethod"
                                         :loading="loading">
                                         <el-option
@@ -84,14 +84,14 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Resources" prop="resource">
+                        <el-form-item label="" prop="resource">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
-                                    <el-button>0 BTC</el-button>
+                                    <el-button class="resource-btn">{{$t('pages.post_trade.btn.btc')}}</el-button>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Ability to create a Sell Ad in 2 clicks
+                                        {{$t('pages.post_trade.ability_to_create')}}
                                     </div>
                                 </el-col>
                             </el-row>
@@ -99,85 +99,86 @@
                         <el-form-item label="">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
-                                    <el-row>
-                                        <el-col :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
-                                            <div>Sell</div>
-                                            <el-form-item label="">
-                                                <el-select
-                                                    v-model="value"
-                                                    filterable
-                                                    remote
-                                                    reserve-keyword
-                                                    placeholder="Please enter a keyword"
-                                                    :remote-method="remoteMethod"
-                                                    :loading="loading">
-                                                    <el-option
-                                                        v-for="item in options"
-                                                        :key="item.value"
-                                                        :label="item.label"
-                                                        :value="item.value">
-                                                    </el-option>
-                                                </el-select>
-                                            </el-form-item>
-                                            <div>Amount</div>
-                                            <el-form-item label="">
-                                                <el-input placeholder="Please input" v-model="formLabelAlign.input"></el-input>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
-                                            <div class="icon-exchange-wrap">
-                                                <i class="el-icon-refresh icon-exchange"></i>
-                                            </div>
-                                        </el-col>
-                                        <el-col :xs="{span:8, offset:1}" :sm="{span:8, offset:1}" :md="{span:8, offset:1}" :lg="{span:8, offset:1}" :xl="{span:8, offset:1}">
-                                            <div>Buy</div>
-                                            <el-form-item label="">
-                                                <el-select
-                                                    v-model="value"
-                                                    filterable
-                                                    remote
-                                                    reserve-keyword
-                                                    placeholder="Please enter a keyword"
-                                                    :remote-method="remoteMethod"
-                                                    :loading="loading">
-                                                    <el-option
-                                                        v-for="item in options"
-                                                        :key="item.value"
-                                                        :label="item.label"
-                                                        :value="item.value">
-                                                    </el-option>
-                                                </el-select>
-                                            </el-form-item>
-                                            <div>Amount</div>
-                                            <el-form-item label="">
-                                                <el-input placeholder="Please input" v-model="formLabelAlign.input"></el-input>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
+                                    <el-card shadow="never" class="box-card box-card-create-trade" :body-style="{height:'175px', borderRadius:'0'}">
+                                        <el-row>
+                                            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:8, offset:1}">
+                                                <div>{{$t('pages.post_trade.sell')}}</div>
+                                                <el-form-item label="">
+                                                    <el-select
+                                                        v-model="value"
+                                                        filterable
+                                                        remote
+                                                        reserve-keyword
+                                                        :placeholder="$t('placeholders.please_enter_a_keyword')"
+                                                        :remote-method="remoteMethod"
+                                                        :loading="loading">
+                                                        <el-option
+                                                            v-for="item in options"
+                                                            :key="item.value"
+                                                            :label="item.label"
+                                                            :value="item.value">
+                                                        </el-option>
+                                                    </el-select>
+                                                </el-form-item>
+                                                <div>{{$t('pages.post_trade.amount')}}</div>
+                                                <el-form-item label="">
+                                                    <el-input :placeholder="$t('placeholders.please_input')" v-model="formLabelAlign.input"></el-input>
+                                                </el-form-item>
+                                            </el-col>
+                                            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:2, offset:1}" class="icon-exchange-outer">
+                                                <div class="icon-exchange-wrap">
+                                                    <i class="el-icon-refresh icon-exchange"></i>
+                                                </div>
+                                            </el-col>
+                                            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:8, offset:1}">
+                                                <div>{{$t('pages.post_trade.buy')}}</div>
+                                                <el-form-item label="">
+                                                    <el-select
+                                                        v-model="value"
+                                                        filterable
+                                                        remote
+                                                        reserve-keyword
+                                                        :placeholder="$t('placeholders.please_enter_a_keyword')"
+                                                        :remote-method="remoteMethod"
+                                                        :loading="loading">
+                                                        <el-option
+                                                            v-for="item in options"
+                                                            :key="item.value"
+                                                            :label="item.label"
+                                                            :value="item.value">
+                                                        </el-option>
+                                                    </el-select>
+                                                </el-form-item>
+                                                <div>{{$t('pages.post_trade.amount')}}</div>
+                                                <el-form-item label="">
+                                                    <el-input :placeholder="$t('placeholders.please_input')" v-model="formLabelAlign.input"></el-input>
+                                                </el-form-item>
+                                            </el-col>
+                                        </el-row>
+                                    </el-card>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Rate equation">
+                        <el-form-item :label="$t('pages.post_trade.rate_equation')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.region"></el-input>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Now the trade price is determined from the hourly market price. For more information about equations how
-                                        to determine your trading price see pricing FAQ. Please note that the advertiser is always responsible for all payment processing fees.
+                                        {{$t('pages.post_trade.hits.b')}}
                                     </div>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Price (UAH)">
+                        <el-form-item :label="$t('pages.post_trade.price_uah')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Payment method">
+                        <el-form-item :label="$t('pages.post_trade.payment_method')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-select
@@ -185,7 +186,7 @@
                                         filterable
                                         remote
                                         reserve-keyword
-                                        placeholder="Please enter a keyword"
+                                        :placeholder="$t('placeholders.please_enter_a_keyword')"
                                         :remote-method="remoteMethod"
                                         :loading="loading">
                                         <el-option
@@ -198,28 +199,28 @@
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Bank name">
+                        <el-form-item :label="$t('pages.post_trade.bank_name')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Payment Details">
+                        <el-form-item :label="$t('pages.post_trade.payment_details')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Min price on market now">
+                        <el-form-item :label="$t('pages.post_trade.min_price')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        The minimum price among all orders from other users on this exchange
+                                        {{$t('pages.post_trade.hits.c')}}
                                     </div>
                                 </el-col>
                             </el-row>
@@ -231,32 +232,31 @@
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Profit Margin you want over the bitcoin market price. Use a negative value for buying or selling under
-                                        the market price to attract more contacts. For more complex pricing edit the price equation directly.
+                                        {{$t('pages.post_trade.hits.d')}}
                                     </div>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Minimum transaction limit (UAH)">
+                        <el-form-item :label="$t('pages.post_trade.min_transaction')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Don't accept offers less than amount. This is helpful to eliminate trades for micro amounts.
+                                        {{$t('pages.post_trade.hits.e')}}
                                     </div>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Maximum transaction limit (UAH)">
+                        <el-form-item :label="$t('pages.post_trade.max_transaction')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input v-model="formLabelAlign.type"></el-input>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Maximum transaction limit in one trade. It is necessary to lower your risk within one transaction.
+                                        {{$t('pages.post_trade.hits.f')}}
                                     </div>
                                 </el-col>
                             </el-row>
@@ -265,17 +265,19 @@
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-checkbox v-model="formLabelAlign.checked">
-                                        Auto-adjust transaction limit according to price of cryptocurrency
                                     </el-checkbox>
+                                    <div class="checkbox-adjust">
+                                        {{$t('pages.post_trade.hits.g')}}
+                                    </div>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        When cryptocurrency price changes, your maximum limit will be auto-adjusted according to the price (to be able to carry out the trade with one transaction when price fluctuates)
+                                        {{$t('pages.post_trade.hits.i')}}
                                     </div>
                                 </el-col>
                             </el-row>
                         </el-form-item>
-                        <el-form-item label="Terms of Trade">
+                        <el-form-item :label="$t('pages.post_trade.terms_of_trade')">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-input
@@ -287,7 +289,7 @@
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        Other information you wish to tell about your trade. Example 1: This advertisement is only for cash trades. Example 2: Please make request only when you can complete the payment with cash within 12 hours.
+                                        {{$t('pages.post_trade.hits.j')}}
                                     </div>
                                 </el-col>
                             </el-row>
@@ -298,31 +300,31 @@
                                     <el-row>
                                         <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                             <el-checkbox v-model="formLabelAlign.checked">
-                                                Verified users only
                                             </el-checkbox>
+                                            <div class="checkbox-adjust">{{$t('pages.post_trade.verified_users_only')}}</div>
                                         </el-col>
                                     </el-row>
                                     <el-row>
                                         <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                             <el-checkbox v-model="formLabelAlign.checked">
-                                                Trusted users only
                                             </el-checkbox>
+                                            <div class="checkbox-adjust">{{$t('pages.post_trade.trusted_users_only')}}</div>
                                         </el-col>
                                     </el-row>
                                     <el-row>
                                         <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                             <el-checkbox v-model="formLabelAlign.checked">
-                                                Identify user before continue trade
                                             </el-checkbox>
+                                            <div class="checkbox-adjust">{{$t('pages.post_trade.identify_user_before_continue_trade')}}</div>
                                         </el-col>
                                     </el-row>
                                 </el-col>
                                 <el-col :xs="24" :sm="24" :md="{span:10, offset:1}" :lg="{span:10, offset:1}" :xl="{span:10, offset:1}">
                                     <div class="form-hits">
-                                        To contact your advertisement, users need to verify their identity by sending IDs, driver's licence or passport.
+                                        {{$t('pages.post_trade.hits.u')}}
                                     </div>
                                     <div class="form-hits">
-                                        Restrict your advertisement to be shown only to users that you have marked as Trusted. Learn how to mark users as trusted.
+                                        {{$t('pages.post_trade.hits.m')}}
                                     </div>
                                 </el-col>
                             </el-row>
@@ -331,116 +333,116 @@
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13">
                                     <el-collapse v-model="activeNames" class="advertisement-rules">
-                                        <el-collapse-item title=" Set your work time. If you uncheck the box, the corresponding day will be set as a holiday." name="2" class="time-collapse">
+                                        <el-collapse-item :title="$t('pages.post_trade.set_your_time')" name="2" class="time-collapse">
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Mo:&#9;
+                                                        Mo
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Tu:&#9;
+                                                        Tu
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        We:&#9;
+                                                        We
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Th:&#9;
+                                                        Th
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Fr:&#9;
+                                                        Fr
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Sa:&#9;
+                                                        Sa
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
                                             <el-row>
                                                 <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
                                                     <el-checkbox v-model="formLabelAlign.checked">
-                                                        Su:&#9;
+                                                        Su
                                                     </el-checkbox>
                                                 </el-col>
-                                                <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="22">
+                                                <el-col :xs="{span:20, offset:1}" :sm="22" :md="22" :lg="22" :xl="22">
                                                     <el-time-picker
                                                         is-range
                                                         v-model="formLabelAlign.time1"
                                                         range-separator="To"
-                                                        start-placeholder="Start time"
-                                                        end-placeholder="End time">
+                                                        :start-placeholder="$t('pages.post_trade.start_time')"
+                                                        :end-placeholder="$t('pages.post_trade.end_time')">
                                                     </el-time-picker>
                                                 </el-col>
                                             </el-row>
@@ -452,7 +454,7 @@
                         <el-form-item label="">
                             <el-row>
                                 <el-col :xs="24" :sm="24" :md="13" :lg="13" :xl="13" class="create-btn-wrap">
-                                    <el-button type="primary" plain>Create</el-button>
+                                    <el-button class="create-trade-btn" type="primary" plain>{{$t('buttons.create')}}</el-button>
                                 </el-col>
                             </el-row>
                         </el-form-item>
@@ -468,7 +470,6 @@
         name: "create",
         data() {
             return {
-                labelPosition: 'left',
                 activeNames: '',
                 formLabelAlign: {
                     name: '',
@@ -502,6 +503,11 @@
                     "Washington", "West Virginia", "Wisconsin",
                     "Wyoming"]
             };
+        },
+        computed: {
+            labelPosition() {
+                return (typeof window != "undefined") && window.innerWidth < 992 ? 'top' :'right';
+            }
         },
         mounted() {
             this.list = this.states.map(item => {
@@ -551,6 +557,9 @@
     .el-input__inner {
         width: 100% !important;
     }
+    .el-collapse-item__header {
+        line-height: 15px;
+    }
     .advertisement-rules-collapse {
         .el-collapse-item__header {
             padding-left: 20px;
@@ -585,29 +594,34 @@
         transition: color .15s linear;
     }
     .bg-img-left {
-        background-image: url("../../assets/images/green-bg.png");
-        height: 50px;
+        background-image: url("../../assets/images/svg/bg-1.svg");
+        height: auto;
         color: white;
+        padding-bottom: 5px;
     }
     .bg-img-right {
-        background-image: url("../../assets/images/white-bg.png");
-        height: 50px;
+        background-image: url("../../assets/images/svg/bg-2.svg");
+        height: auto;
         color: white;
+        padding-bottom: 5px;
     }
     .join-col {
         background: #3b8070;
         border-radius: 0;
-        height: 50px;
+        height: auto;
+       //padding-bottom: 10px;
     }
     .follow-col {
         background: dodgerblue;
         border-radius: 0;
-        height: 50px;
+        height: auto;
+       // padding-bottom: 10px;
     }
     .join-col-text, .follow-col-text {
         height: 100%;
         text-align: center;
         padding-top: 15px;
+        font-size: 13px;
     }
     .proposal-btn-wrap {
         padding: 5px 10px 0 0;
@@ -623,5 +637,12 @@
     .create-btn-wrap {
         display: flex;
         justify-content: flex-end;
+    }
+    .checkbox-adjust {
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    .el-checkbox {
+
     }
 </style>
