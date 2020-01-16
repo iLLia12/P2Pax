@@ -2,6 +2,8 @@
 @import 'variables';
 @import 'element-ui';
 @import "navbar";
+@import "helpers";
+
 
 html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -96,6 +98,13 @@ button, input {
 .btn-pink {
     background-color: $--color-pink;
     border-color: $--color-pink;
+}
+.link {
+    color: $--color-blue;
+    text-decoration: none;
+    &:hover {
+        text-decoration:underline;
+    }
 }
 @media (max-width: 1920px){
     .icon-exchange-outer {
@@ -211,6 +220,9 @@ button, input {
     .create-trade-btn {
         width: 100%;
     }
+    .reg-form-wrap, .login-form-wrap {
+        margin-top: 0!important;
+    }
 }
 @media (max-width: 768px){
     .benefits-flex-disabler {
@@ -289,5 +301,21 @@ button, input {
     }
     .icon-exchange-wrap {
         padding-top: 50px!important;
+    }
+}
+
+
+@media (min-height: 900px){
+    .login-wrap {
+        min-height: 800px!important;
+    }
+    .reg-wrap {
+        min-height: 800px!important;
+    }
+}
+
+@media (min-height: 700px){
+    .reg-wrap {
+        height: 700px!important;
     }
 }

@@ -1,31 +1,31 @@
 <template>
-    <div>
+    <div class="layout-wrap">
         <el-header class="header">
             <div class="navWrapper">
                 <div id="menu" :class="{ active: isActive }">
                     <el-menu mode="horizontal" @select="handleSelect" :router="true">
                         <el-row>
                             <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container nav-container">
-                                <el-menu-item>
+                                <el-menu-item @click="isActive = !isActive">
                                     <n-link to="/" no-prefetch>
                                         <Logo />
                                     </n-link>
                                 </el-menu-item>
-                                <el-menu-item class="nav-link">
+                                <el-menu-item class="nav-link" @click="isActive = !isActive">
                                     <n-link class="nav-link" to="#" no-prefetch>{{ $t('top_nav.buy') }}</n-link>
                                 </el-menu-item>
-                                <el-menu-item class="nav-link">
+                                <el-menu-item class="nav-link" @click="isActive = !isActive">
                                     <n-link class="nav-link" to="#" no-prefetch>{{ $t('top_nav.sell') }}</n-link>
                                 </el-menu-item>
-                                <el-menu-item>
+                                <el-menu-item @click="isActive = !isActive">
                                     <n-link class="nav-link" to="/trade/create" no-prefetch>{{ $t('top_nav.post_trade') }}</n-link>
                                 </el-menu-item>
                                 <el-menu-item class="nav-link nav-link-login">
                                     <n-link to="/auth/login" no-prefetch>
-                                        <el-button class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
+                                        <el-button @click="isActive = !isActive" class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
                                     </n-link>
                                     <n-link to="/auth/registration" no-prefetch>
-                                        <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
+                                        <el-button @click="isActive = !isActive" class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
                                     </n-link>
                                     <div class="nav-link-lang">
                                         <nuxt-link
@@ -103,10 +103,10 @@
                                         </el-dropdown-menu>
                                     </el-dropdown>
                                     <n-link to="/auth/login" no-prefetch>
-                                        <el-button class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
+                                        <el-button @click="isActive = !isActive" class="btn-shadow login-btn" type="primary">{{ $t('top_nav.login') }}</el-button>
                                     </n-link>
                                     <n-link to="/auth/registration" no-prefetch>
-                                        <el-button class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
+                                        <el-button @click="isActive = !isActive" class="btn-shadow" type="success">{{ $t('top_nav.registration') }}</el-button>
                                     </n-link>
                                 </div>
                             </el-col>
@@ -362,7 +362,7 @@
         margin-bottom: 10px;
     }
     .footer-links-wrap {
-        > a{
+        > a {
             display: block;
             text-decoration: none;
             color: white;
