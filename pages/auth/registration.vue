@@ -7,32 +7,44 @@
                     <p class="sign_up_info">Register to start buying and selling cryptocurrency</p>
                     <el-form :label-position="labelPosition" :model="form">
                         <el-form-item label="">
-                            <el-input placeholder="Email" v-model="form.name"></el-input>
+                            <el-input size="mini" placeholder="Email" v-model="form.name"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input placeholder="User name" v-model="form.region"></el-input>
+                            <el-input size="mini" placeholder="User name" v-model="form.region"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input placeholder="Password" v-model="form.type"></el-input>
+                            <el-input size="mini" placeholder="Password" v-model="form.type"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input placeholder="Password confirmation" v-model="form.type"></el-input>
+                            <el-input size="mini" placeholder="Password confirmation" v-model="form.type"></el-input>
                         </el-form-item>
                         <el-form-item label="">
-                            <el-input placeholder="Referral code" v-model="form.type"></el-input>
+                            <el-input size="mini" placeholder="Referral code" v-model="form.type"></el-input>
                         </el-form-item>
-                        <el-form-item label="" label-position="left" class="terms-wrap" prop="type">
-                            <el-checkbox v-model="form.accept" label="" name="type"></el-checkbox>
-                            <span class="reg-checkbox-text" slot="">I have read and accept <a class="term-link" href="#">the terms of the license agreement.
-                                <span class="asterisk-required reg-checkbox-text">*</span></a></span>
+                        <el-form-item label="" label-position="right" class="terms-wrap" prop="type">
+                            <el-row>
+                                <el-col :span="2"><el-checkbox v-model="form.accept" label="" name="type"></el-checkbox></el-col>
+                                <el-col :span="21" style="padding-top: 10px">
+                                    <div class="reg-checkbox-text">I have read and accept <a class="term-link" href="#">the terms of the license agreement.</a>
+                                        <span class="asterisk-required reg-checkbox-text">*</span>
+                                    </div>
+                                </el-col>
+                            </el-row>
                         </el-form-item>
-                        <el-form-item label="" prop="type" class="citizen-wrap">
-                            <el-checkbox v-model="form.not_citizen" label="" name="type"></el-checkbox>
-                            <span class="reg-checkbox-text" slot="">I am not a citizen of countries which are indicated in the item 2.4 of the terms of the license agreement
-                                <span class="asterisk-required reg-checkbox-text">*</span></span>
+                        <el-form-item label="" label-position="right" prop="type" class="citizen-wrap">
+                            <el-row>
+                                <el-col :span="2">
+                                    <el-checkbox v-model="form.not_citizen" label="" name="type"></el-checkbox>
+                                </el-col>
+                                <el-col :span="21" style="padding-top: 10px">
+                                    <div class="reg-checkbox-text" slot="">I am not a citizen of countries which are indicated in the item 2.4 of the terms of the license agreement
+                                        <span class="asterisk-required reg-checkbox-text">*</span>
+                                    </div>
+                                </el-col>
+                            </el-row>
                         </el-form-item>
                     </el-form>
-                    <el-row>
+                    <el-row style="margin-bottom: 10px;">
                         <el-button class="reg-form-btn" type="primary">Sign up</el-button>
                     </el-row>
                     <el-row>

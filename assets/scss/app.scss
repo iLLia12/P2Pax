@@ -98,12 +98,22 @@ button, input {
 .btn-pink {
     background-color: $--color-pink;
     border-color: $--color-pink;
+    color: $--color-white;
 }
 .link {
     color: $--color-blue;
     text-decoration: none;
     &:hover {
         text-decoration:underline;
+    }
+}
+.el-button--primary {
+    background: $--color-blue-light !important;
+    border-color: $--color-blue-light !important;
+    color: $--color-white !important;
+    &:active {
+        background: $--color-blue-light!important;
+        border-color: $--color-blue-light !important;
     }
 }
 @media (max-width: 1920px){
@@ -316,7 +326,7 @@ button, input {
 
 @media (min-height: 700px){
     .reg-wrap {
-        height: 520px!important;
+        height: 450px!important;
     }
     .terms-wrap > .el-form-item__content {
         line-height: 20px;
@@ -334,18 +344,28 @@ button, input {
         .el-card__body {
             padding-top: 15px!important;
         }
+    }
+    .el-form-item__content {
+        line-height: 30px!important;
+    }
+    .reg-checkbox-text {
+        line-height: 10px!important;
+        font-size: 12px;
+    }
+    .terms-wrap {
+        margin-bottom: 0!important;
     }
 }
 
 @media (max-height: 700px){
     .reg-wrap {
-        height: 520px!important;
+        height: 410px!important;
     }
     .terms-wrap > .el-form-item__content {
         line-height: 20px;
     }
     .sign_up_info {
-        font-size: 12px;
+        font-size: 10px;
     }
     .el-form-item {
         margin-bottom: 10px!important;
@@ -356,6 +376,23 @@ button, input {
     .reg-form-wrap {
         .el-card__body {
             padding-top: 15px!important;
+            padding-bottom: 5px!important;
         }
+    }
+    .el-form-item__content {
+        line-height: 30px!important;
+    }
+    .reg-checkbox-text {
+        line-height: 10px!important;
+        font-size: 10px;
+    }
+    .terms-wrap {
+        margin-bottom: 0!important;
+    }
+    .sign_up_info {
+        margin-bottom: 5px!important;
+    }
+    .sign_up_title {
+        font-size: 14px;
     }
 }
