@@ -319,3 +319,9 @@ button, input {
         height: 700px!important;
     }
 }
+
+@media (min-height: 700px){
+    .reg-wrap {
+        height: 650px!important;
+    }
+}
