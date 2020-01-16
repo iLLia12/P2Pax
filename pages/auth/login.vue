@@ -3,7 +3,7 @@
         <el-row class="login-wrap">
             <el-col :xs="24" :sm="24" :md="{offset:7, span:10}" :lg="{offset:9, span:6}" :xl="{offset:9, span:6}" class="inner-container">
                 <el-card class="login-form-wrap">
-                    <h2 class="sign_up_title">Login</h2>
+                    <h2 class="login_title">Login</h2>
                     <el-form :label-position="labelPosition" :model="form">
                         <el-form-item label="">
                             <el-input placeholder="Email" v-model="form.name"></el-input>
@@ -93,15 +93,10 @@
     .login-checkbox-text {
         color: $--color-text-secondary;
     }
-    .sign_up_title {
+    .login_title {
         text-align: center;
         color: $--color-secondary;
         margin-bottom: 10px;
-    }
-    .sign_up_info {
-        text-align: center;
-        margin-bottom: 20px;
-        color: $--color-text-secondary;
     }
     .login-form-btn {
         width: 100%;

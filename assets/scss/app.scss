@@ -316,12 +316,46 @@ button, input {
 
 @media (min-height: 700px){
     .reg-wrap {
-        height: 640px!important;
+        height: 520px!important;
+    }
+    .terms-wrap > .el-form-item__content {
+        line-height: 20px;
+    }
+    .sign_up_info {
+        font-size: 12px;
+    }
+    .el-form-item {
+        margin-bottom: 10px!important;
+    }
+    .sign_up_title {
+        margin-bottom: 0!important;
+    }
+    .reg-form-wrap {
+        .el-card__body {
+            padding-top: 15px!important;
+        }
     }
 }
 
 @media (max-height: 700px){
     .reg-wrap {
-        height: 640px!important;
+        height: 520px!important;
+    }
+    .terms-wrap > .el-form-item__content {
+        line-height: 20px;
+    }
+    .sign_up_info {
+        font-size: 12px;
+    }
+    .el-form-item {
+        margin-bottom: 10px!important;
+    }
+    .sign_up_title {
+        margin-bottom: 0!important;
+    }
+    .reg-form-wrap {
+        .el-card__body {
+            padding-top: 15px!important;
+        }
     }
 }
