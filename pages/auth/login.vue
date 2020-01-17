@@ -33,12 +33,11 @@
                     <el-row>
                             <nuxt-link
                                 class="link"
-                                to="#">
+                                to="reset">
                                 <span class="block text-center">
                                     Forgot your password?
                                 </span>
                             </nuxt-link>
-                        </p>
                     </el-row>
                 </el-card>
             </el-col>
@@ -70,38 +69,40 @@
 
     @import "assets/scss/element-ui-colors";
     @import "assets/scss/variables";
+
     .login-wrap {
         height: 480px;
         display: flex;
         align-items: center;
-    }
-    .term-link {
-        color: $--color-blue;
-        text-decoration: none;
-        &:hover {
-            text-decoration:underline;
+
+        .term-link {
+            color: $--color-blue;
+            text-decoration: none;
+            &:hover {
+                text-decoration:underline;
+            }
         }
-    }
-    .asterisk-required {
-        color: red;
-    }
-    .citizen-wrap, .terms-wrap {
-        > .el-form-item__content {
-            line-height: 20px;
+        .asterisk-required {
+            color: red;
         }
-    }
-    .login-checkbox-text {
-        color: $--color-text-secondary;
-    }
-    .login_title {
-        text-align: center;
-        color: $--color-secondary;
-        margin-bottom: 10px;
-    }
-    .login-form-btn {
-        width: 100%;
-    }
-    .login-link-wrap {
-        text-align: center;
+        .citizen-wrap, .terms-wrap {
+            > .el-form-item__content {
+                line-height: 20px;
+            }
+        }
+        .login-checkbox-text {
+            color: $--color-text-secondary;
+        }
+        .login_title {
+            text-align: center;
+            color: $--color-secondary;
+            margin-bottom: 10px;
+        }
+        .login-form-btn {
+            width: 100%;
+        }
+        .login-link-wrap {
+            text-align: center;
+        }
     }
 </style>

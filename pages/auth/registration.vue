@@ -92,39 +92,40 @@
         height: 900px;
         display: flex;
         align-items: center;
-    }
-    .term-link {
-        color: $--color-blue;
-        text-decoration: none;
-        &:hover {
-            text-decoration:underline;
+
+        .term-link {
+            color: $--color-blue;
+            text-decoration: none;
+            &:hover {
+                text-decoration:underline;
+            }
         }
-    }
-    .asterisk-required {
-        color: red;
-    }
-    .citizen-wrap {
-        > div {
-            line-height: 20px;
+        .asterisk-required {
+            color: red;
         }
-    }
-    .reg-checkbox-text {
-        color: $--color-text-secondary;
-    }
-    .sign_up_title {
-        text-align: center;
-        color: $--color-secondary;
-        margin-bottom: 10px;
-    }
-    .sign_up_info {
-        text-align: center;
-        margin-bottom: 20px;
-        color: $--color-text-secondary;
-    }
-    .reg-form-btn {
-        width: 100%;
-    }
-    .reg-link-wrap {
-        text-align: center;
+        .citizen-wrap {
+            > div {
+                line-height: 20px;
+            }
+        }
+        .reg-checkbox-text {
+            color: $--color-text-secondary;
+        }
+        .sign_up_title {
+            text-align: center;
+            color: $--color-secondary;
+            margin-bottom: 10px;
+        }
+        .sign_up_info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: $--color-text-secondary;
+        }
+        .reg-form-btn {
+            width: 100%;
+        }
+        .reg-link-wrap {
+            text-align: center;
+        }
     }
 </style>

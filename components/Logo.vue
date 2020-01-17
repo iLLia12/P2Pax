@@ -14,7 +14,6 @@
         color: #303133;
         font-size: 20px;
     }
-
     #logo img {
         margin-right: 5px;
         width: 100px;

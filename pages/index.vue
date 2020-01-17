@@ -584,9 +584,6 @@
         height: 95px;
     }
     .head-text-block {
-        //height: 52px;
-       // padding-top: 10px;
-        font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;

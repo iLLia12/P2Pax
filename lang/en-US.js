@@ -132,6 +132,11 @@ export default {
                 u:"To contact your advertisement, users need to verify their identity by sending IDs, driver's licence or passport.",
                 m:"Restrict your advertisement to be shown only to users that you have marked as Trusted. Learn how to mark users as trusted.",
             }
+        },
+        support:{
+            placeholders:{
+                category:"Category"
+            }
         }
     },
     route: {

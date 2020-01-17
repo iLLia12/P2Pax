@@ -15,7 +15,8 @@
     "dependencies": {
         "element-ui": "^2.4.11",
         "nuxt": "^2.0.0",
-        "nuxt-i18n": "^6.4.1"
+        "nuxt-i18n": "^6.4.1",
+        "vue-wysiwyg": "^1.7.2"
     },
     "devDependencies": {
         "@vue/test-utils": "^1.0.0-beta.27",

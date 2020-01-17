@@ -3,10 +3,15 @@
 .l-h-20 {
     line-height: 20px;
 }
-
 .block {
     display: block;
 }
 .text-secondary {
     color: $--color-text-secondary;
+}
+.color-white {
+    color: $--color-white;
+}
+.mb-10 {
+    margin-bottom: 10px;
 }
