@@ -140,10 +140,44 @@ button, input {
 .vw-btn-separator, .vw-separator {
     display: none;
 }
+.el-switch__core {
+    min-width: 40px;
+}
+.profile-menu {
+    display: block;
+}
 @media (max-width: 1920px){
     .icon-exchange-outer {
         display: flex;
         justify-content: center;
+    }
+    .account-security {
+        .col {
+            margin-bottom: 20px;
+        }
+        .account-security-row {
+            margin-bottom: 0;
+        }
+        .el-divider--horizontal {
+            margin-bottom: 20px!important;
+        }
+    }
+    .login-history-btn-wrap {
+        margin-top: 20px;
+    }
+    .profile-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .side-menu-wrap {
+        margin-bottom: 30px;
+    }
+    .basic-info-wrap {
+        margin-bottom: 30px;
+    }
+    .profile-title {
+        margin-bottom: 10px!important;
     }
 }
 
@@ -209,6 +243,12 @@ button, input {
     .el-range-separator {
         width: 15%!important;
     }
+
+    .profile-index-wrap {
+        .el-select {
+            width: 100%;
+        }
+    }
 }
 @media (max-width: 990px){
     .icon-help {
@@ -218,6 +258,17 @@ button, input {
     }
     .form-hits {
         display: none;
+    }
+    .profile-index-wrap {
+        .user-name, .user-email-change, .user-email {
+            text-align: left!important;
+        }
+        .avatar-wrap {
+            display: block;
+        }
+        .user-info-wrap {
+            margin-top: 20px;
+        }
     }
 }
 @media (max-width: 950px){
@@ -263,7 +314,23 @@ button, input {
     .el-collapse-item__header, .faq-answer {
         font-size: 12px;
     }
+
+    .profile-index-wrap {
+        .el-select {
+            width: 100%;
+        }
+    }
 }
+
+@media (min-height: 900px){
+    .login-wrap {
+        min-height: 800px!important;
+    }
+    .reg-wrap {
+        min-height: 800px!important;
+    }
+}
+
 @media (max-width: 768px){
     .benefits-flex-disabler {
         display: block;
@@ -342,15 +409,18 @@ button, input {
     .icon-exchange-wrap {
         padding-top: 50px!important;
     }
-}
-
-
-@media (min-height: 900px){
-    .login-wrap {
-        min-height: 800px!important;
-    }
-    .reg-wrap {
-        min-height: 800px!important;
+    .profile-index-wrap {
+        margin-top: 0!important;
+        .profile-menu {
+            padding-bottom: 10px;
+            padding-right: 10px;
+        }
+        .profile-title {
+            font-size: 22px;
+        }
+        .el-menu-item {
+            height: 50px;
+        }
     }
 }
 

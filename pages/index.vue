@@ -619,7 +619,7 @@
      }
     .title-section {
         margin-bottom: 20px;
-        color: #c5c8d0;
+        color: $--color-grey-light;
     }
     .card-mobile-proposals {
         display: none;
