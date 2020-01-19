@@ -3,6 +3,7 @@
 @import 'element-ui';
 @import "navbar";
 @import "helpers";
+@import "element-ui-variables";
 
 
 html {
@@ -146,6 +147,7 @@ button, input {
 .profile-menu {
     display: block;
 }
+
 @media (max-width: 1920px){
     .icon-exchange-outer {
         display: flex;
@@ -165,11 +167,7 @@ button, input {
     .login-history-btn-wrap {
         margin-top: 20px;
     }
-    .profile-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
+
     .side-menu-wrap {
         margin-bottom: 30px;
     }
@@ -206,6 +204,15 @@ button, input {
     }
     .banner-btn {
         width: 60%!important;
+    }
+    .profile-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .el-menu-item {
+            width: auto;
+            padding-left: 5px!important;
+        }
     }
 }
 @media (max-width: 1400px){
@@ -268,6 +275,9 @@ button, input {
         }
         .user-info-wrap {
             margin-top: 20px;
+        }
+        a {
+            width: auto;
         }
     }
 }
@@ -421,6 +431,19 @@ button, input {
         .el-menu-item {
             height: 50px;
         }
+    }
+
+    .trade-simple-wrap {
+        margin-top: 0!important;
+        .trade-simple-mobile {
+            display: block!important;
+        }
+        .trade-simple-desktop {
+            display: none!important;
+        }
+    }
+    .el-footer {
+        margin-top:10px;
     }
 }
 

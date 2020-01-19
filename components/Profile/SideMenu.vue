@@ -4,15 +4,19 @@
             background-color="#ffffff"
             default-active="2"
             class="el-menu-vertical-demo profile-menu">
-            <el-menu-item index="2">
-                <i class="el-icon-s-custom"></i>
-                <span>Account</span>
-            </el-menu-item>
-            <el-menu-item index="4">
-                <i class="el-icon-files"></i>
-                <span>My Wallets</span>
-            </el-menu-item>
-            <el-menu-item index="4">
+            <nuxt-link to="profile">
+                <el-menu-item index="1" :route="{ name: 'profile' }">
+                    <i class="el-icon-s-custom"></i>
+                    <span>Account</span>
+                </el-menu-item>
+            </nuxt-link>
+            <nuxt-link to="wallets">
+                <el-menu-item  index="2" :route="{ name: 'wallets' }">
+                    <i class="el-icon-files"></i>
+                    <span>Wallets</span>
+                </el-menu-item>
+            </nuxt-link>
+            <el-menu-item index="3">
                 <i class="el-icon-notebook-1"></i>
                 <span>My Contacts</span>
             </el-menu-item>
@@ -20,7 +24,7 @@
                 <i class="el-icon-circle-plus-outline"></i>
                 <span>Invite Friends</span>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="5">
                 <i class="el-icon-d-arrow-left"></i>
                 <span>Logout</span>
             </el-menu-item>
@@ -31,6 +35,9 @@
 <script>
     export default {
         name: "SideMenu",
+        methods:{
+
+        }
     }
 </script>
 
@@ -46,6 +53,13 @@
         }
         .el-card__body {
             padding: 0 ;
+        }
+        .el-menu-item {
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+            width: 100%;
         }
     }
 </style>

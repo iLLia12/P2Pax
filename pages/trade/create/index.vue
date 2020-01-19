@@ -623,13 +623,13 @@
         transition: color .15s linear;
     }
     .bg-img-left {
-        background-image: url("../../assets/images/svg/bg-1.svg");
+        background-image: url("../../../assets/images/svg/bg-1.svg");
         height: auto;
         color: white;
         padding-bottom: 5px;
     }
     .bg-img-right {
-        background-image: url("../../assets/images/svg/bg-2.svg");
+        background-image: url("../../../assets/images/svg/bg-2.svg");
         height: auto;
         color: white;
         padding-bottom: 5px;

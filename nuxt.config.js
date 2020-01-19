@@ -1,6 +1,6 @@
 
 export default {
-    mode: 'universal',
+
     /*
     ** Headers of the page
     */
@@ -30,8 +30,10 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
+        '@/plugins/mixins',
         '@/plugins/element-ui',
         '@/plugins/wysiwyg',
+        { src: '~/plugins/axios', mode: 'client' },
     ],
     /*
     ** Nuxt.js dev-modules

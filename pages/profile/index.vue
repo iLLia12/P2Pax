@@ -1,18 +1,18 @@
 <template>
-    <div class="content-wrap profile-index-wrap">
+    <el-row class="content-wrap profile-index-wrap">
         <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container">
             <el-row>
-                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="4" class="side-menu-wrap">
+                <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="side-menu-wrap">
                     <SideMenu />
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:19, offset:1}">
+                <el-col :xs="24" :sm="24" :md="{span:19, offset:1}" :lg="{span:19, offset:1}" :xl="{span:19, offset:1}">
                     <el-row>
                         <el-col>
                             <h1 class="profile-title">General information</h1>
                             <el-form label-position="top" :model="form" class="quick-buy-table">
                                 <el-card class="box-card" :body-style="{ borderRadius:'0'}">
                                     <el-row>
-                                        <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4">
+                                        <el-col :xs="24" :sm="24" :md="24" :lg="4" :xl="4">
                                             <el-row>
                                                 <el-col :xs="10" :sm="4" :md="24" :lg="24" :xl="24">
                                                     <div class="avatar-wrap">
@@ -32,9 +32,9 @@
                                                 </el-col>
                                             </el-row>
                                         </el-col>
-                                        <el-col :xs="24" :sm="24" :md="20" :lg="20" :xl="20">
+                                        <el-col :xs="24" :sm="24" :md="24" :lg="20" :xl="20">
                                             <el-row class="form-inner-wrap">
-                                                <el-col :xs="24" :sm="24" :md="{span:5, offset:1}" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
+                                                <el-col :xs="24" :sm="24" :md="24" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
                                                     <el-form-item label="Country">
                                                         <el-select v-model="form.country" placeholder="" class="search-input">
                                                             <el-option label="Ukraine" value="shanghai"></el-option>
@@ -43,12 +43,12 @@
                                                         </el-select>
                                                     </el-form-item>
                                                 </el-col>
-                                                <el-col :xs="24" :sm="24" :md="{span:5, offset:1}" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
+                                                <el-col :xs="24" :sm="24" :md="24" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
                                                     <el-form-item label="Phone number">
                                                         <el-input v-model="form.phone"></el-input>
                                                     </el-form-item>
                                                 </el-col>
-                                                <el-col :xs="24" :sm="24" :md="{span:5, offset:1}" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
+                                                <el-col :xs="24" :sm="24" :md="24" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
                                                     <el-form-item label="Time">
                                                         <el-select v-model="form.time" placeholder="" class="search-input">
                                                             <el-option label="Ukraine" value="shanghai"></el-option>
@@ -57,7 +57,7 @@
                                                         </el-select>
                                                     </el-form-item>
                                                 </el-col>
-                                                <el-col :xs="24" :sm="24" :md="{span:5, offset:1}" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
+                                                <el-col :xs="24" :sm="24" :md="24" :lg="{span:5, offset:1}" :xl="{span:5, offset:1}">
                                                     <el-form-item label="Language">
                                                         <el-select v-model="form.language" placeholder="" class="search-input">
                                                             <el-option label="Ukraine" value="shanghai"></el-option>
@@ -136,7 +136,7 @@
                                 </el-row>
                             </el-card>
                         </el-col>
-                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:11, offset:1}">
+                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:12, offset:1}">
                             <el-row>
                                 <el-col>
                                     <h1 class="profile-title">Account security</h1>
@@ -232,7 +232,7 @@
                 </el-col>
             </el-row>
         </el-col>
-    </div>
+    </el-row>
 </template>
 
 <script>
