@@ -1,22 +1,20 @@
 <template>
     <el-row class="content-wrap trade-simple-wrap">
-
         <DesktopForm />
 
-        <MobileForm />
-
+        <MobileFormB />
     </el-row>
 </template>
 
 <script>
 
-    import MobileForm from "../../../components/Trade/Simple/MobileForm";
+    import MobileFormB from "../../../components/Trade/Simple/MobileFormB";
     import DesktopForm from "../../../components/Trade/Simple/DesktopForm";
 
     export default {
-        name: "simple",
+        name: "simplev2",
         components:{
-            MobileForm,
+            MobileFormB,
             DesktopForm,
         },
         data: () => ({

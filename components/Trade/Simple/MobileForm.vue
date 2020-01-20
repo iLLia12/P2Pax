@@ -6,109 +6,61 @@
                     <el-collapse v-model="activeStep" @change="handleChange" accordion>
                         <el-collapse-item title="Step 1" :name="1">
                             <p class="title-inner">Currency to sell</p>
-                            <el-row>
+                            <el-row style="margin-bottom: 5px">
                                 <el-col class="currency-scroll-wrap" :xs="{span:8, offset:8}" :sm="{span:8, offset:8}" :md="{span:8, offset:8}" :lg="6" :xl="6">
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('DFC')"
-                                                   :type="form.currency_sell === 'DFC' ? 'primary' : ''"
-                                                   size="mini">DFC</el-button></div>
+                                        <el-button @click="selectCurrencySell('BTC')"
+                                                   :type="form.currency_sell === 'BTC' ? 'primary' : ''"
+                                                   size="mini">BTC</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('DAQ')"
-                                                   :type="form.currency_sell === 'DAQ' ? 'primary' : ''"
-                                                   size="mini">DAQ</el-button></div>
+                                        <el-button @click="selectCurrencySell('ETH')"
+                                                   :type="form.currency_sell === 'ETH' ? 'primary' : ''"
+                                                   size="mini">ETH</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('FDS')"
-                                                   :type="form.currency_sell === 'FDS' ? 'primary' : ''"
-                                                   size="mini">FDS</el-button></div>
+                                        <el-button @click="selectCurrencySell('AC')"
+                                                   :type="form.currency_sell === 'AC' ? 'primary' : ''"
+                                                   size="mini">AC</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('MVN')"
-                                                   :type="form.currency_sell === 'MVN' ? 'primary' : ''"
-                                                   size="mini">MVN</el-button></div>
+                                        <el-button @click="selectCurrencySell('USD')"
+                                                   :type="form.currency_sell === 'USD' ? 'primary' : ''"
+                                                   size="mini">USD</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('SLD')"
-                                                   :type="form.currency_sell === 'SLD' ? 'primary' : ''"
-                                                   size="mini">SLD</el-button></div>
+                                        <el-button @click="selectCurrencySell('RUB')"
+                                                   :type="form.currency_sell === 'RUB' ? 'primary' : ''"
+                                                   size="mini">RUB</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('TRE')"
-                                                   :type="form.currency_sell === 'TRE' ? 'primary' : ''"
-                                                   size="mini">TRE</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('VCX')"
-                                                   :type="form.currency_sell === 'VCX' ? 'primary' : ''"
-                                                   size="mini">DFC</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('BBV')"
-                                                   :type="form.currency_sell === 'BBV' ? 'primary' : ''"
-                                                   size="mini">DAQ</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('ZDS')"
-                                                   :type="form.currency_sell === 'ZDS' ? 'primary' : ''"
-                                                   size="mini">FDS</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('LLK')"
-                                                   :type="form.currency_sell === 'LLK' ? 'primary' : ''"
-                                                   size="mini">MVN</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('POI')"
-                                                   :type="form.currency_sell === 'POI' ? 'primary' : ''"
-                                                   size="mini">SLD</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencySell('RTE')"
-                                                   :type="form.currency_sell === 'RTE' ? 'primary' : ''"
-                                                   size="mini">TRE</el-button></div>
+                                        <el-button @click="selectCurrencySell('UAH')"
+                                                   :type="form.currency_sell === 'UAH' ? 'primary' : ''"
+                                                   size="mini">UAH</el-button></div>
                                 </el-col>
                             </el-row>
                             <p class="title-inner">Currency to buy</p>
-                            <el-row>
+                            <el-row style="margin-bottom: 5px">
                                 <el-col class="currency-scroll-wrap" :xs="{span:8, offset:8}" :sm="{span:8, offset:8}" :md="{span:8, offset:8}" :lg="6" :xl="6">
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('DFC')"
-                                                   :type="form.currency_buy === 'DFC' ? 'primary' : ''"
-                                                   size="mini">DFC</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('BTC')"
+                                                   :type="form.currency_buy === 'BTC' ? 'primary' : ''"
+                                                   size="mini">BTC</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('DAQ')"
-                                                   :type="form.currency_buy === 'DAQ' ? 'primary' : ''"
-                                                   size="mini">DAQ</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('ETH')"
+                                                   :type="form.currency_buy === 'ETH' ? 'primary' : ''"
+                                                   size="mini">ETH</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('FDS')"
-                                                   :type="form.currency_buy === 'FDS' ? 'primary' : ''"
-                                                   size="mini">FDS</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('AC')"
+                                                   :type="form.currency_buy === 'AC' ? 'primary' : ''"
+                                                   size="mini">AC</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('MVN')"
-                                                   :type="form.currency_buy === 'MVN' ? 'primary' : ''"
-                                                   size="mini">MVN</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('USD')"
+                                                   :type="form.currency_buy === 'USD' ? 'primary' : ''"
+                                                   size="mini">USD</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('SLD')"
-                                                   :type="form.currency_buy === 'SLD' ? 'primary' : ''"
-                                                   size="mini">SLD</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('RUB')"
+                                                   :type="form.currency_buy === 'RUB' ? 'primary' : ''"
+                                                   size="mini">RUB</el-button></div>
                                     <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('TRE')"
-                                                   :type="form.currency_buy === 'TRE' ? 'primary' : ''"
-                                                   size="mini">TRE</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('VCX')"
-                                                   :type="form.currency_buy === 'VCX' ? 'primary' : ''"
-                                                   size="mini">DFC</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('BBV')"
-                                                   :type="form.currency_buy === 'BBV' ? 'primary' : ''"
-                                                   size="mini">DAQ</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('ZDS')"
-                                                   :type="form.currency_buy === 'ZDS' ? 'primary' : ''"
-                                                   size="mini">FDS</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('LLK')"
-                                                   :type="form.currency_buy === 'LLK' ? 'primary' : ''"
-                                                   size="mini">MVN</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('POI')"
-                                                   :type="form.currency_buy === 'POI' ? 'primary' : ''"
-                                                   size="mini">SLD</el-button></div>
-                                    <div class="currency-tag-wrap">
-                                        <el-button @click="selectCurrencyBuy('RTE')"
-                                                   :type="form.currency_buy === 'RTE' ? 'primary' : ''"
-                                                   size="mini">TRE</el-button></div>
+                                        <el-button @click="selectCurrencyBuy('UAH')"
+                                                   :type="form.currency_buy === 'UAH' ? 'primary' : ''"
+                                                   size="mini">UAH</el-button></div>
                                 </el-col>
                             </el-row>
                             <el-row type="flex" justify="center" class="btn-wrap">
@@ -312,7 +264,7 @@
             border: none;
         }
         .el-collapse-item__header {
-            font-size: 25px;
+            font-size: 20px;
             text-align: center;
             color: $--color-grey-light;
         }
@@ -325,7 +277,7 @@
             margin-top: 20px;
         }
         .title-inner {
-            margin-bottom: 10px;
+           // margin-bottom: 10px;
             font-size: 18px;
             text-align: center;
             color: $--color-blue-light;
@@ -335,7 +287,7 @@
                 > div[role=button] {
                     background: $--color-alert-danger-light;
                     color: $--color-alert-danger-text;
-                    font-size: 25px;
+                    font-size: 20px;
                     padding-left: 20px;
                 }
             }
@@ -345,7 +297,7 @@
                 > div[role=button] {
                     background: $--color-alert-success-light;
                     color: $--color-alert-success-text;
-                    font-size: 25px;
+                    font-size: 20px;
                     padding-left: 20px;
                 }
             }
@@ -377,7 +329,7 @@
             }
         }
         .currency-scroll-wrap {
-            height: 210px;
+            height: 128px;
             overflow: auto;
         }
     }
