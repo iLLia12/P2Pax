@@ -143,6 +143,8 @@ export default {
             next:"NEXT",
             back:"BACK",
             save:"SAVE",
+            amount:"amount",
+            price:"price",
             exchange_rate_to_sell:"Exchange rate to sell",
             set_manually:"Set manually",
             count_amount:"Count the amount depending on the market rate",
