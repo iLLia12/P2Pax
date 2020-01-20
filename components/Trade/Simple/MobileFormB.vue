@@ -2,11 +2,11 @@
     <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container trade-simple-mobile">
         <el-row  type="flex" justify="center">
             <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 1">
-                <h5 class="title">Step 1</h5>
+                <h5 class="title">{{$t('pages.simple_trade.step_one')}}</h5>
 
                 <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'5px', paddingBottom:'5px'}">
                     <el-collapse v-model="activeNames" @change="handleChange">
-                        <el-collapse-item title="Currency to sell" :name="1" class="currency-sell">
+                        <el-collapse-item :title="$t('pages.simple_trade.currency_to_sell')" :name="1" class="currency-sell">
                             <el-row>
                                 <el-col class="currency-scroll-wrap" :xs="{span:8, offset:8}" :sm="{span:8, offset:8}" :md="{span:8, offset:8}" :lg="6" :xl="6">
                                     <div class="currency-tag-wrap">
@@ -36,7 +36,7 @@
                                 </el-col>
                             </el-row>
                         </el-collapse-item>
-                        <el-collapse-item title="Currency to buy" :name="2" class="currency-buy">
+                        <el-collapse-item :title="$t('pages.simple_trade.currency_to_buy')" :name="2" class="currency-buy">
                             <el-row>
                                 <el-col class="currency-scroll-wrap" :xs="{span:8, offset:8}" :sm="{span:8, offset:8}" :md="{span:8, offset:8}" :lg="6" :xl="6">
                                     <div class="currency-tag-wrap">
@@ -68,23 +68,23 @@
                         </el-collapse-item>
                     </el-collapse>
                     <el-row type="flex" justify="center" class="btn-wrap">
-                        <el-button @click="changeStep(2)" type="success">NEXT</el-button>
+                        <el-button @click="changeStep(2)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
                     </el-row>
                 </el-card>
             </el-col>
 
 
             <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 2">
-                <h5 class="title">Step 2</h5>
+                <h5 class="title">{{$t('pages.simple_trade.step_two')}}</h5>
 
                 <el-card class="box-card" :body-style="{ borderRadius:'0'}">
-                    <p class="title-inner">Exchange rate to sell</p>
+                    <p class="title-inner">{{$t('pages.simple_trade.exchange_rate_to_sell')}}</p>
                     <el-row>
                         <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
                             <el-form :inline="true" :model="form" class="demo-form-inline">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.manual_checkbox"></el-checkbox>
-                                    <span>Set manually</span>
+                                    <span>{{$t('pages.simple_trade.set_manually')}}</span>
                                 </el-form-item>
                                 <el-form-item label="">
                                     <el-input v-model="form.manual_value"></el-input>
@@ -98,19 +98,19 @@
                             <el-form :inline="true" :model="form" class="demo-form-inline" label-position="right">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.market_checkbox"></el-checkbox>
-                                    <span>Count the amount depending on the market rate + </span>
+                                    <span>{{$t('pages.simple_trade.count_amount')}} + </span>
                                 </el-form-item>
                                 <el-form-item label="" class="profit-input">
                                     <el-input v-model="form.market_value"></el-input>
-                                    <div class="input-label-right"> % profit</div>
+                                    <div class="input-label-right"> % {{$t('pages.simple_trade.profit')}}</div>
                                 </el-form-item>
                             </el-form>
                         </el-col>
                     </el-row>
 
                     <el-row type="flex" justify="center" class="btn-wrap">
-                        <el-button @click="changeStep(1)">BACK</el-button>
-                        <el-button @click="changeStep(3)" type="success">NEXT</el-button>
+                        <el-button @click="changeStep(1)">{{$t('pages.simple_trade.back')}}</el-button>
+                        <el-button @click="changeStep(3)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
                     </el-row>
                 </el-card>
             </el-col>
@@ -121,12 +121,12 @@
 
                 <el-card class="box-card" :body-style="{ borderRadius:'0'}">
                     <el-form :inline="true" :model="form" class="demo-form-inline">
-                        <p class="title-inner">Where do you want to get UAH</p>
+                        <p class="title-inner">{{$t('pages.simple_trade.where_to_get')}}</p>
                         <el-row style="margin-top: 30px">
                             <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.bank_card"></el-checkbox>
-                                    <span>Bank card</span>
+                                    <span>{{$t('pages.simple_trade.bank_card')}}</span>
                                 </el-form-item>
                             </el-col>
                         </el-row>
@@ -134,7 +134,7 @@
                             <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.cash"></el-checkbox>
-                                    <span>Сash upon meeting</span>
+                                    <span>{{$t('pages.simple_trade.cash_upon_meeting')}}</span>
                                 </el-form-item>
                             </el-col>
                         </el-row>
@@ -142,14 +142,14 @@
                             <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.other"></el-checkbox>
-                                    <span>Other</span>
+                                    <span>{{$t('pages.simple_trade.other')}}</span>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                     </el-form>
                     <el-row type="flex" justify="center" class="btn-wrap">
-                        <el-button @click="changeStep(2)">BACK</el-button>
-                        <el-button @click="changeStep(4)" type="success">NEXT</el-button>
+                        <el-button @click="changeStep(2)">{{$t('pages.simple_trade.back')}}</el-button>
+                        <el-button @click="changeStep(4)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
                     </el-row>
                 </el-card>
             </el-col>
@@ -159,12 +159,12 @@
                 <h5 class="title">Step 4</h5>
 
                 <el-card class="box-card" :body-style="{ borderRadius:'0'}">
-                    <p class="sub-title">Filter buyers</p>
-                    <p class="title-inner">Show only offers with</p>
+                    <p class="sub-title">{{$t('pages.simple_trade.filter_buyers')}}</p>
+                    <p class="title-inner">{{$t('pages.simple_trade.show_only_offers_with')}}</p>
                     <el-form :inline="true" :model="form" class="demo-form-inline">
                         <el-row style="margin-top: 30px">
                             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                <el-form-item label="Minimum transaction amount greater than:" class="form-item-wrap">
+                                <el-form-item :label="$t('pages.simple_trade.minimum_transaction')"  class="form-item-wrap">
                                     <el-input
                                         size="mini"
                                         placeholder=""
@@ -173,7 +173,7 @@
                                 </el-form-item>
                             </el-col>
                             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                <el-form-item label="Maximum amount of single transaction:" class="form-item-wrap">
+                                <el-form-item :label="$t('pages.simple_trade.maximum_transaction')" class="form-item-wrap">
                                     <el-input
                                         size="mini"
                                         placeholder=""
@@ -184,27 +184,27 @@
                             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.input7"></el-checkbox>
-                                    <span>Verified users only</span>
+                                    <span>{{$t('pages.simple_trade.verified_users_only')}}</span>
                                 </el-form-item>
                             </el-col>
                             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.input8"></el-checkbox>
-                                    <span>Authenticated users only</span>
+                                    <span>{{$t('pages.simple_trade.authenticated_users_only')}}</span>
                                 </el-form-item>
                             </el-col>
                             <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                                 <el-form-item label="">
                                     <el-checkbox v-model="form.input9"></el-checkbox>
-                                    <span>Check user before the deal</span>
+                                    <span>{{$t('pages.simple_trade.check_user_before_the_deal')}}</span>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                     </el-form>
 
                     <el-row type="flex" justify="center" class="btn-wrap">
-                        <el-button @click="changeStep(3)">BACK</el-button>
-                        <el-button type="success">NEXT</el-button>
+                        <el-button @click="changeStep(3)">{{$t('pages.simple_trade.back')}}</el-button>
+                        <el-button type="success">{{$t('pages.simple_trade.save')}}</el-button>
                     </el-row>
                 </el-card>
             </el-col>

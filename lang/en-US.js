@@ -133,6 +133,32 @@ export default {
                 m:"Restrict your advertisement to be shown only to users that you have marked as Trusted. Learn how to mark users as trusted.",
             }
         },
+        simple_trade:{
+            step_one:"Step 1",
+            step_two:"Step 2",
+            step_three:"Step 3",
+            step_four:"Step 4",
+            currency_to_sell:"Currency to sell",
+            currency_to_buy:"Currency to buy",
+            next:"NEXT",
+            back:"BACK",
+            save:"SAVE",
+            exchange_rate_to_sell:"Exchange rate to sell",
+            set_manually:"Set manually",
+            count_amount:"Count the amount depending on the market rate",
+            profit:"profit",
+            where_to_get:"Where do you want to get UAH?",
+            bank_card:"Bank card",
+            cash_upon_meeting:"Сash upon meeting",
+            other:"Other",
+            filter_buyers:"Filter buyers",
+            show_only_offers_with:"Show only offers with",
+            minimum_transaction:"Minimum transaction amount greater than:",
+            maximum_transaction:"Maximum amount of single transaction:",
+            verified_users_only:"Verified users only",
+            authenticated_users_only:"Authenticated users only",
+            check_user_before_the_deal:"Check user before the deal"
+        },
         support:{
             placeholders:{
                 category:"Category"
