@@ -32,9 +32,6 @@
                         <el-row>
                             <nuxt-link class="footer-link  text-right color-white" to="/trade/create/simple">Trade</nuxt-link>
                         </el-row>
-                        <el-row>
-                            <nuxt-link class="footer-link  text-right color-white" to="/trade/create/simpleB">Trade v2</nuxt-link>
-                        </el-row>
                     </el-col>
                     <!--<el-col :span="7">
                         <p class="footer-section-title text-center">{{ $t('footer.actions') }}</p>

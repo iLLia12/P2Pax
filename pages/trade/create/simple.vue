@@ -20,9 +20,9 @@
             DesktopForm,
         },
         data: () => ({
-            form:{
+            /*form:{
                 name:''
-            }
+            }*/
         })
     }
 </script>
