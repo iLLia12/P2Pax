@@ -45,10 +45,10 @@
                                     </el-col>
                                     <el-col v-if="!!form.currency_sell.length" class="currency-scroll-wrap" :xs="{span:11, offset:1}" :sm="{span:11, offset:1}" :md="{span:11, offset:1}" :lg="{span:6, offset:1}" :xl="{span:6, offset:1}" style="padding-top: 10px">
                                         <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.amount')" v-model="form.name"></el-input>
+                                            <el-input :placeholder="$t('pages.simple_trade.amount')" v-model="form.currency_sell_amount"></el-input>
                                         </el-form-item>
                                         <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.name"></el-input>
+                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.currency_sell_price"></el-input>
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
@@ -91,10 +91,10 @@
                                     </el-col>
                                     <el-col v-if="!!form.currency_buy.length" class="currency-scroll-wrap" :xs="{span:11, offset:1}" :sm="{span:11, offset:1}" :md="{span:11, offset:1}" :lg="{span:6, offset:1}" :xl="{span:6, offset:1}" style="padding-top: 10px">
                                         <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.amount')" v-model="form.name"></el-input>
+                                            <el-input :placeholder="$t('pages.simple_trade.amount')" v-model="form.currency_buy_amount"></el-input>
                                         </el-form-item>
                                         <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.name"></el-input>
+                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.currency_buy_price"></el-input>
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
@@ -255,6 +255,10 @@
             activeNames:[1,2],
             step:1,
             form:{
+                currency_sell_amount:'',
+                currency_sell_price:8500,
+                currency_buy_amount:'',
+                currency_buy_price:'',
                 currency_sell:'',
                 currency_buy:'',
                 manual_checkbox:'',
@@ -294,6 +298,15 @@
                 this.$set(this.form, 'currency_buy', '');
             }
         },
+        watch:{
+            'form.currency_sell_amount': function(val) {
+                if(val){
+                    this.$set(this.form, 'currency_buy_amount', 8500);
+                }else {
+                    this.$set(this.form, 'currency_buy_amount', '');
+                }
+            }
+        }
     }
 </script>
 
