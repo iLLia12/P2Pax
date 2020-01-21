@@ -7,7 +7,7 @@
 
                     <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'5px', paddingBottom:'5px'}">
                         <el-collapse v-model="activeNames" @change="handleChange">
-                            <el-collapse-item :title="$t('pages.simple_trade.currency_to_sell')" :name="1" class="currency-sell"><!--:xs="12" :sm="12" :md="12" :lg="6" :xl="6"-->
+                            <el-collapse-item :title="$t('pages.simple_trade.currency_to_sell')" :name="1" class="currency-sell">
                                 <el-row>
                                     <el-col v-if="!(!!form.currency_sell.length)" class="currency-scroll-wrap" :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="6" :xl="6">
                                         <div class="currency-tag-wrap">
@@ -85,7 +85,7 @@
                                         <el-tag
                                             closable
                                             :disable-transitions="false"
-                                            @close="handleClearCurrencySellTag()">
+                                            @close="handleClearCurrencyBuyTag()">
                                             {{form.currency_buy}}
                                         </el-tag>
                                     </el-col>
