@@ -39,6 +39,7 @@
                                     </el-row>
                                 </el-form>
                                 <el-table
+                                    class="wallets-table"
                                     :data="wallets"
                                     style="width: 100%">
                                     <el-table-column
@@ -86,7 +87,7 @@
                                                     <el-button size="mini" round>Deposit</el-button>
                                                 </el-col>
                                                 <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
-                                                    <el-button size="mini" round>Deposit</el-button>
+                                                    <el-button size="mini" round>Withdraw</el-button>
                                                 </el-col>
                                                 <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
                                                     <el-button size="mini" round>Transfer</el-button>
@@ -98,6 +99,57 @@
                                         </template>
                                     </el-table-column>
                                 </el-table>
+
+                                <div class="wallets-tiles">
+                                    <div v-for="wallet in wallets">
+                                        <el-row style="margin: 20px 25px">
+                                            <el-row>
+                                                <el-col :span="8">Coin:</el-col>
+                                                <el-col :span="16">{{wallet.currency}} <span class="table-symbol"> <el-tag size="mini">{{wallet.symbol}}</el-tag></span></el-col>
+                                            </el-row>
+                                            <el-row>
+                                                <el-col :span="8">Available:</el-col>
+                                                <el-col :span="16">{{wallet.available}}</el-col>
+                                            </el-row>
+                                            <el-row>
+                                                <el-col :span="8">Frozen:</el-col>
+                                                <el-col :span="16">{{wallet.frozen}}</el-col>
+                                            </el-row>
+                                            <el-row>
+                                                <el-col :span="8">Operation:</el-col>
+                                                <el-col :span="16">{{wallet.operation}}</el-col>
+                                            </el-row>
+                                            <el-col class="small-buttons-wrap">
+                                                <el-row>
+                                                    <el-col class="btn-wrap" :xs="{span:24, offset:0}" :sm="{span:24, offset:0}" :md="{span:24, offset:0}" :lg="{span:24, offset:0}" :xl="{span:24, offset:0}">
+                                                        <el-button size="mini" round>Deposit</el-button>
+                                                        <el-button size="mini" round>Withdraw</el-button>
+                                                        <el-button size="mini" round>Transfer</el-button>
+                                                        <el-button size="mini" round>History</el-button>
+                                                    </el-col>
+                                                </el-row>
+                                            </el-col>
+                                            <el-col class="big-buttons-wrap">
+                                                <el-row>
+                                                    <el-col class="btn-mob-wrap">
+                                                        <el-button size="mini" round>Deposit</el-button>
+                                                    </el-col>
+                                                    <el-col class="btn-mob-wrap">
+                                                        <el-button size="mini" round>Withdraw</el-button>
+                                                    </el-col>
+                                                    <el-col class="btn-mob-wrap">
+                                                        <el-button size="mini" round>Transfer</el-button>
+                                                    </el-col>
+                                                    <el-col class="btn-mob-wrap">
+                                                        <el-button size="mini" round>History</el-button>
+                                                    </el-col>
+                                                </el-row>
+                                            </el-col>
+                                        </el-row>
+                                        <el-divider></el-divider>
+                                    </div>
+                                </div>
+
                             </el-card>
                         </el-col>
                     </el-row>
@@ -160,6 +212,21 @@
         .table-symbol {
             font-size: 10px;
             color: $--color-text-secondary;
+        }
+        .btn-wrap {
+            display: block;
+        }
+        .big-buttons-wrap {
+            display: none;
+        }
+        .wallets-tiles {
+            display: none;
+        }
+        .btn-mob-wrap {
+            margin-bottom: 10px;
+            > button {
+                width: 100%
+            }
         }
     }
 </style>

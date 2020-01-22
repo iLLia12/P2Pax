@@ -2,15 +2,15 @@
     <el-card class="box-card profile-menu-wrap" :body-style="{ borderRadius:'0'}">
         <el-menu
             background-color="#ffffff"
-            default-active="1"
+            :default-active="activeLink"
             class="el-menu-vertical-demo profile-menu">
-            <nuxt-link to="profile">
+            <nuxt-link to="/profile">
                 <el-menu-item index="1" :route="{ name: 'profile' }">
                     <i class="el-icon-s-custom"></i>
                     <span>Account</span>
                 </el-menu-item>
             </nuxt-link>
-            <nuxt-link to="profile/wallets">
+            <nuxt-link to="/profile/wallets">
                 <el-menu-item  index="2" :route="{ name: 'wallets' }">
                     <i class="el-icon-files"></i>
                     <span>Wallets</span>
@@ -35,6 +35,11 @@
 <script>
     export default {
         name: "SideMenu",
+        computed:{
+            activeLink() {
+                return 1
+            }
+        },
         methods:{
 
         }

@@ -149,6 +149,11 @@ button, input {
 }
 
 @media (max-width: 1920px){
+    .wallets-index-wrap {
+        .wallets-tiles {
+            display: block;
+        }
+    }
     .icon-exchange-outer {
         display: flex;
         justify-content: center;
@@ -176,6 +181,9 @@ button, input {
     }
     .profile-title {
         margin-bottom: 10px!important;
+    }
+    .wallets-table {
+        display: none;
     }
 }
 
@@ -210,6 +218,10 @@ button, input {
         flex-wrap: wrap;
         justify-content: flex-start;
         .el-menu-item {
+            width: auto;
+            padding-left: 5px!important;
+        }
+        > a{
             width: auto;
             padding-left: 5px!important;
         }
@@ -448,6 +460,12 @@ button, input {
 }
 
 @media (min-height: 700px){
+    .wallets-index-wrap {
+        margin-top: 0!important;
+        .form-filters {
+            padding-right: 20px!important;
+        }
+    }
     .reg-wrap {
         height: 450px!important;
     }
@@ -517,6 +535,17 @@ button, input {
     }
     .sign_up_title {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 470px){
+    .wallets-index-wrap {
+        .small-buttons-wrap {
+            display: none;
+        }
+        .big-buttons-wrap {
+            display: block!important;
+        }
     }
 }
 
