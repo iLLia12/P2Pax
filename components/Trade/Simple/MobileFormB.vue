@@ -345,7 +345,6 @@
             margin-top: 10px;
         }
         .title-inner {
-
             font-size: 18px;
             text-align: center;
             color: $--color-blue-light;
