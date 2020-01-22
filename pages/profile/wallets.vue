@@ -6,7 +6,7 @@
                     <SideMenu />
                 </el-col>
                 <el-col :xs="24" :sm="24" :md="{span:19, offset:1}" :lg="{span:19, offset:1}" :xl="{span:19, offset:1}">
-                    <el-row>
+                    <el-row class="wallets-inner-wrap">
                         <el-col>
                             <h1 class="profile-title">My Wallets</h1>
                             <el-card class="box-card profile-menu-wrap" :body-style="{ borderRadius:'0'}">
@@ -44,16 +44,16 @@
                                     style="width: 100%">
                                     <el-table-column
                                         prop="currency"
+                                        width="120px"
                                         label="Coin"
-                                        sortable
-                                        width="180">
+                                        sortable>
                                     </el-table-column>
                                     <el-table-column
                                         align="center"
+                                        width="110px"
                                         prop="available"
                                         label="Available"
-                                        sortable
-                                        width="120">
+                                        sortable>
                                         <template slot-scope="scope">
                                             <div>{{scope.row.available}}</div>
                                             <div class="table-symbol">{{scope.row.symbol}}</div>
@@ -62,9 +62,9 @@
                                     <el-table-column
                                         align="center"
                                         prop="frozen"
+                                        width="110px"
                                         label="Frozen"
-                                        sortable
-                                        width="120">
+                                        sortable>
                                         <template slot-scope="scope">
                                             <div>{{scope.row.frozen}}</div>
                                             <div class="table-symbol">{{scope.row.symbol}}</div>
@@ -72,10 +72,10 @@
                                     </el-table-column>
                                     <el-table-column
                                         align="center"
+                                        width="120px"
                                         prop="operation"
                                         label="Operation"
-                                        sortable
-                                        width="120">
+                                        sortable>
                                     </el-table-column>
                                     <el-table-column
                                         align="right"
@@ -83,16 +83,16 @@
                                         label="">
                                         <template slot-scope="scope">
                                             <el-row>
-                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
+                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:4, offset:1}" :xl="{span:4, offset:1}">
                                                     <el-button size="mini" round>Deposit</el-button>
                                                 </el-col>
-                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
+                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:4, offset:1}" :xl="{span:4, offset:1}">
                                                     <el-button size="mini" round>Withdraw</el-button>
                                                 </el-col>
-                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
+                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:4, offset:1}" :xl="{span:4, offset:1}">
                                                     <el-button size="mini" round>Transfer</el-button>
                                                 </el-col>
-                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:23, offset:1}" :xl="{span:4, offset:1}">
+                                                <el-col :xs="{span:23, offset:1}" :sm="{span:23, offset:1}" :md="{span:23, offset:1}" :lg="{span:4, offset:1}" :xl="{span:4, offset:1}">
                                                     <el-button size="mini" round>History</el-button>
                                                 </el-col>
                                             </el-row>
@@ -206,6 +206,12 @@
             margin-bottom: 30px;
             color: $--color-grey-light;
         }
+        .wallets-table {
+            display: block;
+        }
+        .wallets-tiles {
+            display: none;
+        }
         .form-filters {
             padding: 10px 40px 0 0;
         }
@@ -217,9 +223,6 @@
             display: block;
         }
         .big-buttons-wrap {
-            display: none;
-        }
-        .wallets-tiles {
             display: none;
         }
         .btn-mob-wrap {

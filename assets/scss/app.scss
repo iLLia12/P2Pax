@@ -147,13 +147,7 @@ button, input {
 .profile-menu {
     display: block;
 }
-
 @media (max-width: 1920px){
-    .wallets-index-wrap {
-        .wallets-tiles {
-            display: block;
-        }
-    }
     .icon-exchange-outer {
         display: flex;
         justify-content: center;
@@ -182,12 +176,17 @@ button, input {
     .profile-title {
         margin-bottom: 10px!important;
     }
-    .wallets-table {
-        display: none;
-    }
 }
 
 @media (max-width: 1700px){
+    .wallets-index-wrap {
+        .wallets-tiles {
+            display: block;
+        }
+        .wallets-table {
+            display: none;
+        }
+    }
     .benefits-col {
         display: block;
         width: 100%;
@@ -354,6 +353,9 @@ button, input {
 }
 
 @media (max-width: 768px){
+    .wallets-index-wrap {
+        margin-top: 0;
+    }
     .benefits-flex-disabler {
         display: block;
     }
@@ -461,7 +463,6 @@ button, input {
 
 @media (min-height: 700px){
     .wallets-index-wrap {
-        margin-top: 0!important;
         .form-filters {
             padding-right: 20px!important;
         }
