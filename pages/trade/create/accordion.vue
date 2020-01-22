@@ -3,20 +3,20 @@
 
         <DesktopForm />
 
-        <MobileFormB />
+        <MobileForm />
 
     </el-row>
 </template>
 
 <script>
 
-    import MobileFormB from "../../../components/Trade/Simple/MobileFormB";
+    import MobileForm from "../../../components/Trade/Simple/MobileForm";
     import DesktopForm from "../../../components/Trade/Simple/DesktopForm";
 
     export default {
-        name: "simpleB",
+        name: "simple",
         components:{
-            MobileFormB,
+            MobileForm,
             DesktopForm,
         },
         data: () => ({

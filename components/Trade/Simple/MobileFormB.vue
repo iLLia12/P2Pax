@@ -2,12 +2,13 @@
     <el-col :xs="24" :sm="24" :md="24" :lg="{offset:4, span:16}" :xl="{offset:4, span:16}" class="inner-container trade-simple-mobile">
         <el-form ref="form" :model="form">
             <el-row  type="flex" justify="center">
-                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-                    <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'0'}">
-                        <el-collapse v-model="activeStep" @change="handleChange" accordion>
-                            <el-collapse-item :title="$t('pages.simple_trade.currency')" :name="1">
-                                <p class="title-inner">{{$t('pages.simple_trade.to_sell')}}</p>
-                                <el-row style="margin-bottom: 5px">
+                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 1">
+                    <h5 class="title">{{$t('pages.simple_trade.step_one')}}</h5>
+
+                    <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'5px', paddingBottom:'5px'}">
+                        <el-collapse v-model="activeNames" @change="handleChange">
+                            <el-collapse-item :title="$t('pages.simple_trade.currency_to_sell')" :name="1" class="currency-sell">
+                                <el-row>
                                     <el-col v-if="!(!!form.currency_sell.length)" class="currency-scroll-wrap" :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="6" :xl="6">
                                         <div class="currency-tag-wrap">
                                             <el-button @click="selectCurrencySell('BTC')"
@@ -51,8 +52,9 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
-                                <p class="title-inner">{{$t('pages.simple_trade.to_buy')}}</p>
-                                <el-row style="margin-bottom: 5px">
+                            </el-collapse-item>
+                            <el-collapse-item :title="$t('pages.simple_trade.currency_to_buy')" :name="2" class="currency-buy">
+                                <el-row>
                                     <el-col v-if="!(!!form.currency_buy.length)" class="currency-scroll-wrap" :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="6" :xl="6">
                                         <div class="currency-tag-wrap">
                                             <el-button @click="selectCurrencyBuy('BTC')"
@@ -96,128 +98,151 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
-                                <el-row type="flex" justify="center" class="btn-wrap">
-                                    <el-button @click="changeStep(2)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
-                                </el-row>
-                            </el-collapse-item>
-                            <el-collapse-item :title="$t('pages.simple_trade.exchange_rate_to_sell')" :name="2">
-                                <el-row>
-                                    <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
-                                        <el-form :inline="true" :model="form" class="demo-form-inline">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.manual_checkbox"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.set_manually')}}</span>
-                                            </el-form-item>
-                                            <el-form-item label="">
-                                                <el-input size="mini" v-model="form.manual_value"></el-input>
-                                            </el-form-item>
-                                        </el-form>
-                                    </el-col>
-                                </el-row>
-                                <el-divider></el-divider>
-                                <el-row>
-                                    <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
-                                        <el-form :inline="true" :model="form" class="demo-form-inline" label-position="right">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.market_checkbox"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.count_amount')}} + </span>
-                                            </el-form-item>
-                                            <el-form-item label="" class="profit-input">
-                                                <el-input size="mini" v-model="form.market_value"></el-input>
-                                                <div class="input-label-right"> % {{$t('pages.simple_trade.profit')}}</div>
-                                            </el-form-item>
-                                        </el-form>
-                                    </el-col>
-                                </el-row>
-
-                                <el-row type="flex" justify="center" class="btn-wrap">
-                                    <el-button @click="changeStep(1)">{{$t('pages.simple_trade.back')}}</el-button>
-                                    <el-button @click="changeStep(3)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
-                                </el-row>
-                            </el-collapse-item>
-                            <el-collapse-item :title="$t('pages.simple_trade.where_to_get')" :name="3">
-                                <el-form :inline="true" :model="form" class="demo-form-inline">
-                                    <el-row style="margin-bottom: 5px">
-                                        <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.bank_card"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.bank_card')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-bottom: 5px">
-                                        <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.cash"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.cash_upon_meeting')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-bottom: 5px">
-                                        <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.other"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.other')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-                                </el-form>
-                                <el-row type="flex" justify="center" class="btn-wrap">
-                                    <el-button @click="changeStep(2)">{{$t('pages.simple_trade.back')}}</el-button>
-                                    <el-button @click="changeStep(4)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
-                                </el-row>
-                            </el-collapse-item>
-                            <el-collapse-item :title="$t('pages.simple_trade.filter_buyers')" :name="4">
-                                <p class="title-inner">{{$t('pages.simple_trade.show_only_offers_with')}}</p>
-                                <el-form :inline="true" :model="form" class="demo-form-inline">
-                                    <el-row style="margin-top: 10px">
-                                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                            <el-form-item :label="$t('pages.simple_trade.minimum_transaction')" class="form-item-wrap">
-                                                <el-input
-                                                    size="mini"
-                                                    placeholder=""
-                                                    v-model="form.input4">
-                                                </el-input>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                            <el-form-item :label="$t('pages.simple_trade.maximum_transaction')" class="form-item-wrap">
-                                                <el-input
-                                                    size="mini"
-                                                    placeholder=""
-                                                    v-model="form.input5">
-                                                </el-input>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.input7"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.verified_users_only')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.input8"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.authenticated_users_only')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                                            <el-form-item label="">
-                                                <el-checkbox v-model="form.input9"></el-checkbox>
-                                                <span>{{$t('pages.simple_trade.check_user_before_the_deal')}}</span>
-                                            </el-form-item>
-                                        </el-col>
-                                    </el-row>
-                                </el-form>
-
-                                <el-row type="flex" justify="center" class="btn-wrap">
-                                    <el-button @click="changeStep(3)">{{$t('pages.simple_trade.back')}}</el-button>
-                                    <el-button type="success">{{$t('pages.simple_trade.save')}}</el-button>
-                                </el-row>
                             </el-collapse-item>
                         </el-collapse>
+                        <el-row type="flex" justify="center" class="btn-wrap">
+                            <el-button @click="changeStep(2)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
+                        </el-row>
                     </el-card>
                 </el-col>
+
+
+                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 2">
+                    <h5 class="title">{{$t('pages.simple_trade.step_two')}}</h5>
+
+                    <el-card class="box-card" :body-style="{ borderRadius:'0'}">
+                        <p class="title-inner">{{$t('pages.simple_trade.exchange_rate_to_sell')}}</p>
+                        <el-row>
+                            <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
+                                <el-form :inline="true" :model="form" class="demo-form-inline">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.manual_checkbox"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.set_manually')}}</span>
+                                    </el-form-item>
+                                    <el-form-item label="">
+                                        <el-input v-model="form.manual_value"></el-input>
+                                    </el-form-item>
+                                </el-form>
+                            </el-col>
+                        </el-row>
+                        <el-divider></el-divider>
+                        <el-row>
+                            <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
+                                <el-form :inline="true" :model="form" class="demo-form-inline" label-position="right">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.market_checkbox"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.count_amount')}} + </span>
+                                    </el-form-item>
+                                    <el-form-item label="" class="profit-input">
+                                        <el-input v-model="form.market_value"></el-input>
+                                        <div class="input-label-right"> % {{$t('pages.simple_trade.profit')}}</div>
+                                    </el-form-item>
+                                </el-form>
+                            </el-col>
+                        </el-row>
+
+                        <el-row type="flex" justify="center" class="btn-wrap">
+                            <el-button @click="changeStep(1)">{{$t('pages.simple_trade.back')}}</el-button>
+                            <el-button @click="changeStep(3)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
+                        </el-row>
+                    </el-card>
+                </el-col>
+
+
+                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 3">
+                    <h5 class="title">{{$t('pages.simple_trade.step_three')}}</h5>
+
+                    <el-card class="box-card" :body-style="{ borderRadius:'0'}">
+                        <el-form :inline="true" :model="form" class="demo-form-inline">
+                            <p class="title-inner">{{$t('pages.simple_trade.where_to_get')}}</p>
+                            <el-row style="margin-top: 30px">
+                                <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.bank_card"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.bank_card')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.cash"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.cash_upon_meeting')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col :xs="24" :sm="{span:18, offset:4}" :md="{span:18, offset:4}" :lg="{span:18, offset:4}" :xl="{span:18, offset:4}">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.other"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.other')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        </el-form>
+                        <el-row type="flex" justify="center" class="btn-wrap">
+                            <el-button @click="changeStep(2)">{{$t('pages.simple_trade.back')}}</el-button>
+                            <el-button @click="changeStep(4)" type="success">{{$t('pages.simple_trade.next')}}</el-button>
+                        </el-row>
+                    </el-card>
+                </el-col>
+
+
+                <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-if="step === 4">
+                    <h5 class="title">{{$t('pages.simple_trade.step_four')}}</h5>
+
+                    <el-card class="box-card" :body-style="{ borderRadius:'0'}">
+                        <p class="sub-title">{{$t('pages.simple_trade.filter_buyers')}}</p>
+                        <p class="title-inner">{{$t('pages.simple_trade.show_only_offers_with')}}</p>
+                        <el-form :inline="true" :model="form" class="demo-form-inline">
+                            <el-row style="margin-top: 30px">
+                                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                                    <el-form-item :label="$t('pages.simple_trade.minimum_transaction')"  class="form-item-wrap">
+                                        <el-input
+                                            size="mini"
+                                            placeholder=""
+                                            v-model="form.input4">
+                                        </el-input>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                                    <el-form-item :label="$t('pages.simple_trade.maximum_transaction')" class="form-item-wrap">
+                                        <el-input
+                                            size="mini"
+                                            placeholder=""
+                                            v-model="form.input5">
+                                        </el-input>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.input7"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.verified_users_only')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.input8"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.authenticated_users_only')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                                    <el-form-item label="">
+                                        <el-checkbox v-model="form.input9"></el-checkbox>
+                                        <span>{{$t('pages.simple_trade.check_user_before_the_deal')}}</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        </el-form>
+
+                        <el-row type="flex" justify="center" class="btn-wrap">
+                            <el-button @click="changeStep(3)">{{$t('pages.simple_trade.back')}}</el-button>
+                            <el-button type="success">{{$t('pages.simple_trade.save')}}</el-button>
+                        </el-row>
+                    </el-card>
+                </el-col>
+
+
             </el-row>
         </el-form>
     </el-col>
@@ -225,14 +250,15 @@
 
 <script>
     export default {
-        name: "MobileForm",
+        name: "MobileFormV2",
         data:() => ({
-            activeStep:1,
             activeNames:[1,2],
-            step:2,
+            step:1,
             form:{
                 currency_sell_amount:'',
                 currency_sell_price:8500,
+                currency_buy_amount:'',
+                currency_buy_price:'',
                 currency_sell:'',
                 currency_buy:'',
                 manual_checkbox:'',
@@ -242,7 +268,6 @@
                 bank_card:'',
                 cash:'',
                 other:'',
-                amount:''
             }
         }),
         computed:{
@@ -264,7 +289,7 @@
                 this.$set(this.form, 'currency_buy', currency)
             },
             changeStep(step) {
-                this.activeStep = step;
+                this.step = step;
             },
             handleClearCurrencySellTag() {
                 this.$set(this.form, 'currency_sell', '');
@@ -291,11 +316,10 @@
     @import "assets/scss/element-ui-colors";
 
     .trade-simple-mobile {
-        height: 110vh;
+        height: 90vh;
         display: none;
         .title {
-            margin-bottom: 10px;
-            font-size: 30px;
+            font-size: 20px;
             text-align: center;
             color: $--color-grey-light;
         }
@@ -309,13 +333,8 @@
         .el-alert__title {
             font-size: 22px;
         }
-        .el-collapse {
-            border: none;
-        }
-        .el-collapse-item__header {
-            font-size: 15px;
-            text-align: center;
-            color: $--color-grey-light;
+        .el-form-item__label {
+            display: inline;
         }
         .currency-tab {
             display: table;
@@ -323,13 +342,19 @@
 
         }
         .btn-wrap {
-            margin-top: 5px;
+            margin-top: 10px;
         }
         .title-inner {
-           // margin-bottom: 10px;
+
             font-size: 18px;
             text-align: center;
             color: $--color-blue-light;
+        }
+        .el-collapse-item__content {
+            padding-bottom: 10px;
+        }
+        .el-collapse-item__wrap {
+            border-bottom: none;
         }
         .currency-sell {
             > div[role=tab] {
@@ -338,6 +363,7 @@
                     color: $--color-alert-danger-text;
                     font-size: 20px;
                     padding-left: 20px;
+                    height: 30px;
                 }
             }
         }
@@ -348,6 +374,7 @@
                     color: $--color-alert-success-text;
                     font-size: 20px;
                     padding-left: 20px;
+                    height: 30px;
                 }
             }
         }
@@ -380,9 +407,6 @@
         .currency-scroll-wrap {
             height: 128px;
             overflow: auto;
-        }
-        .el-form-item__label {
-            display: inline;
         }
     }
 </style>
