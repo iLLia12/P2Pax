@@ -2,7 +2,7 @@
     <el-card class="box-card profile-menu-wrap" :body-style="{ borderRadius:'0'}">
         <el-menu
             background-color="#ffffff"
-            :default-active="activeLink"
+            default-active="1"
             class="el-menu-vertical-demo profile-menu">
             <nuxt-link to="/profile">
                 <el-menu-item index="1" :route="{ name: 'profile' }">
