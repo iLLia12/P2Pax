@@ -2,7 +2,7 @@
     <el-card class="box-card profile-menu-wrap" :body-style="{ borderRadius:'0'}">
         <el-menu
             background-color="#ffffff"
-            default-active="2"
+            default-active="1"
             class="el-menu-vertical-demo profile-menu">
             <nuxt-link to="profile">
                 <el-menu-item index="1" :route="{ name: 'profile' }">
@@ -10,7 +10,7 @@
                     <span>Account</span>
                 </el-menu-item>
             </nuxt-link>
-            <nuxt-link to="wallets">
+            <nuxt-link to="profile/wallets">
                 <el-menu-item  index="2" :route="{ name: 'wallets' }">
                     <i class="el-icon-files"></i>
                     <span>Wallets</span>
