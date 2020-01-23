@@ -2,29 +2,24 @@
     <el-card class="box-card profile-menu-wrap" :body-style="{ borderRadius:'0'}">
         <el-menu
             background-color="#ffffff"
-            default-active="1"
             class="el-menu-vertical-demo profile-menu">
-            <nuxt-link to="/profile">
-                <el-menu-item index="1" :route="{ name: 'profile' }">
-                    <i class="el-icon-s-custom"></i>
-                    <span>Account</span>
-                </el-menu-item>
-            </nuxt-link>
-            <nuxt-link to="/profile/wallets">
-                <el-menu-item  index="2" :route="{ name: 'wallets' }">
-                    <i class="el-icon-files"></i>
-                    <span>Wallets</span>
-                </el-menu-item>
-            </nuxt-link>
-            <el-menu-item index="3">
+            <el-menu-item index="1" @click="changeRoute('/profile')">
+                <i class="el-icon-s-custom"></i>
+                <span>Account</span>
+            </el-menu-item>
+            <el-menu-item  index="2" @click="changeRoute('/profile/wallets')">
+                <i class="el-icon-files"></i>
+                <span>Wallets</span>
+            </el-menu-item>
+            <el-menu-item index="3" @click="changeRoute('/profile/contacts')">
                 <i class="el-icon-notebook-1"></i>
                 <span>My Contacts</span>
             </el-menu-item>
-            <el-menu-item index="4">
+            <el-menu-item index="4" @click="changeRoute('/profile/friends')">
                 <i class="el-icon-circle-plus-outline"></i>
                 <span>Invite Friends</span>
             </el-menu-item>
-            <el-menu-item index="5">
+            <el-menu-item index="5" @click="changeRoute('/profile/logout')">
                 <i class="el-icon-d-arrow-left"></i>
                 <span>Logout</span>
             </el-menu-item>
@@ -33,16 +28,24 @@
 </template>
 
 <script>
+
+    const routes = {
+        "/profile": "1",
+        "/profile/wallets": "2",
+    };
+
+
     export default {
         name: "SideMenu",
-        computed:{
-            activeLink() {
-                return 1
+        data:() => ({
+            activeLink:''
+        }),
+        methods:{
+            changeRoute(val) {
+                this.$router.push({path:val});
+                this.activeLink = routes[val]
             }
         },
-        methods:{
-
-        }
     }
 </script>
 

@@ -1,11 +1,13 @@
 <template>
-    <div class="layout-wrap">
-        <Header />
-        <el-main>
-            <nuxt />
-        </el-main>
-        <FooterComponent />
-    </div>
+    <transition name="el-fade-in-linear">
+        <div class="layout-wrap" v-show="loaded">
+            <Header />
+            <el-main>
+                <nuxt />
+            </el-main>
+            <FooterComponent />
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -20,6 +22,12 @@
             FooterComponent,
             Header
         },
+        data:()=>({
+            loaded:false
+        }),
+        mounted() {
+            this.loaded = true;
+        }
     }
 </script>
 
