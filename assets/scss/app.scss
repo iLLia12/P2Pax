@@ -293,6 +293,19 @@ button, input {
             width: 100%;
         }
     }
+    .faq-wrap {
+        .faq-inner-wrap {
+            margin-bottom: 10px;
+        }
+    }
+    .friends-tabs {
+        .title {
+            margin-bottom: 10px;
+        }
+        .date-picker-wrap {
+            padding-left: 10px;
+        }
+    }
 }
 @media (max-width: 990px){
     .icon-help {
@@ -570,6 +583,21 @@ button, input {
     }
 }
 
+@media (max-width: 600px){
+    .referrals-input-wrap {
+        > button, .el-date-editor {
+            margin-top: 10px;
+            width: 98%;
+        }
+    }
+    .date-picker-wrap {
+        > button, .el-date-editor {
+            margin-top: 10px;
+            width: 98%;
+        }
+    }
+}
+
 @media (max-width: 470px){
     .wallets-index-wrap {
         .small-buttons-wrap {
@@ -592,5 +620,6 @@ button, input {
         }
     }
 }
+
 
 

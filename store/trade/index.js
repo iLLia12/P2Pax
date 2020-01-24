@@ -6,7 +6,6 @@ const defaultState = () => ({
     trade_simple_form:{
         currency_to_buy:'DFV',
         currency_to_sell:'SDF',
-
         currency_sell_amount:'',
         currency_sell_price:8500,
         currency_buy_amount:'',

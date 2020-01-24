@@ -99,6 +99,9 @@ export default {
         */
         standalone: true,
         extend (config, ctx) {
+        },
+        splitChunks: {
+            layouts: true
         }
     }
 }

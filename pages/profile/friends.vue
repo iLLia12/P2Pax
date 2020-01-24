@@ -7,15 +7,23 @@
                 </el-col>
                 <el-col :xs="24" :sm="24" :md="{span:19, offset:1}" :lg="{span:19, offset:1}" :xl="{span:19, offset:1}">
                     <el-row class="wallets-inner-wrap">
-                        <el-col>
-                            <el-tabs type="border-card">
-                                <el-tab-pane label="User">User</el-tab-pane>
-                                <el-tab-pane label="Config">Config</el-tab-pane>
-                                <el-tab-pane label="Role">Role</el-tab-pane>
-                                <el-tab-pane label="Task">Task</el-tab-pane>
-                            </el-tabs>
-                        </el-col>
+                        <FriendsTabs />
                     </el-row>
+                    <template v-if="friendsActiveTab === 'Dashboard'">
+                        <el-row class="contacts-dashboard-tab">
+                            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="10" class="payable-block">
+                                <MyReferralNetwork />
+                                <ReferralLink />
+                                <ReferralCode />
+                            </el-col>
+                            <el-col  :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:13, offset:1}" class="second-table">
+                                <ReferralTable />
+                                <InviteMoreFriends />
+                                <ShareSocial />
+                            </el-col>
+                        </el-row>
+                    </template>
+                    <Faq />
                 </el-col>
             </el-row>
         </el-col>
@@ -23,8 +31,30 @@
 </template>
 
 <script>
+
+    import SideMenu from "../../components/Profile/SideMenu";
+    import MyReferralNetwork from "../../components/Profile/friends/myReferralNetwork";
+    import ReferralTable from "../../components/Profile/friends/referralTable";
+    import FriendsTabs from "../../components/Profile/friends/friendsTabs";
+    import InviteMoreFriends from "../../components/Profile/friends/inviteMoreFriends";
+    import ReferralLink from "../../components/Profile/friends/referralLink";
+    import ReferralCode from "../../components/Profile/friends/referralCode";
+    import ShareSocial from "../../components/Profile/friends/shareSocial";
+    import Faq from "../../components/Profile/friends/faq";
+
     export default {
-        name: "friends"
+        name: "friends",
+        components:{
+            SideMenu,
+            MyReferralNetwork,
+            ReferralTable,
+            FriendsTabs,
+            InviteMoreFriends,
+            ReferralLink,
+            ReferralCode,
+            Faq,
+            ShareSocial
+        },
     }
 </script>
 
@@ -34,28 +64,11 @@
 
     .friends-index-wrap {
         margin-top: 40px;
-        .profile-title {
-            margin-bottom: 30px;
-            color: $--color-grey-light;
+        .el-tabs__content {
+            padding: 0;
         }
-        .form-filters {
-            padding: 10px 40px 0 0;
-        }
-        .table-symbol {
-            font-size: 10px;
-            color: $--color-text-secondary;
-        }
-        .btn-wrap {
-            display: block;
-        }
-        .big-buttons-wrap {
+        .partner-img-mobile-wrap {
             display: none;
-        }
-        .btn-mob-wrap {
-            margin-bottom: 10px;
-            > button {
-                width: 100%
-            }
         }
     }
 </style>
