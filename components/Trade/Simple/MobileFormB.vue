@@ -19,7 +19,7 @@
                                         <el-button type="info" :plain="this.form.currency_sell !== 'AC'" @click="selectCurrencySell('AC')" size="mini" round>AC</el-button>
                                         <el-button type="info" :plain="this.form.currency_sell !== 'USD'" @click="selectCurrencySell('USD')"  size="mini" round>USD</el-button>
                                     </el-col>
-                                    <el-col :span="{span:7, offset:1}" style="display: flex;justify-content: center;">
+                                    <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
                                         <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
                                                           <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
@@ -78,7 +78,7 @@
                                         <el-button :plain="this.form.currency_buy !== 'AC'" type="info" @click="selectCurrencyBuy('AC')" size="mini" round>AC</el-button>
                                         <el-button :plain="this.form.currency_buy !== 'USD'" type="info" @click="selectCurrencyBuy('USD')"  size="mini" round>USD</el-button>
                                     </el-col>
-                                    <el-col :span="{span:7, offset:1}" style="display: flex;justify-content: center;">
+                                    <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
                                         <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
                                                           <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
@@ -113,11 +113,6 @@
                                     <el-col :span="2">
                                         <div style="display: inline-block">{{form.currency_buy_price}}</div>
                                     </el-col>
-                                    <!--<el-col :span="12">
-                                        <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.currency_buy_price"></el-input>
-                                        </el-form-item>
-                                    </el-col>-->
                                 </el-row>
                             </el-col>
                         </el-row>
