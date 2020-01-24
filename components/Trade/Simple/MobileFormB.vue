@@ -14,18 +14,15 @@
                         <el-row>
                             <el-col style="padding-top: 10px">
                                 <el-row type="flex" justify="space-between">
-                                    <el-col :span="12" style="display: flex;justify-content: center;">
-                                        <el-tag @click="selectCurrencySell('BTC')" style="margin-right: 5px" type="info">BTC</el-tag>
-                                        <el-tag @click="selectCurrencySell('AC')" style="margin-right: 5px"  type="info">AC</el-tag>
-                                        <el-tag @click="selectCurrencySell('USD')" style="margin-right: 5px"  type="info">USD</el-tag>
+                                    <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
+                                        <el-button type="info" :plain="this.form.currency_sell !== 'BTC'" @click="selectCurrencySell('BTC')"  size="mini" round>BTC</el-button>
+                                        <el-button type="info" :plain="this.form.currency_sell !== 'AC'" @click="selectCurrencySell('AC')" size="mini" round>AC</el-button>
+                                        <el-button type="info" :plain="this.form.currency_sell !== 'USD'" @click="selectCurrencySell('USD')"  size="mini" round>USD</el-button>
                                     </el-col>
                                     <el-col :span="{span:7, offset:1}" style="display: flex;justify-content: center;">
                                         <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
-                                                          <el-tag
-                                                              :disable-transitions="false">
-                                                          elect other
-                                                        </el-tag>
+                                                          <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
                                                       </span>
                                             <el-dropdown-menu slot="dropdown">
                                                 <el-dropdown-item>
@@ -69,25 +66,22 @@
                         </el-row>
                         <el-divider><div class="icon icon_switch" style="width: 40px; height: 40px"></div></el-divider>
                         <el-alert
-                            :title="$t('pages.simple_trade.currency_to_sell')"
-                            type="success"
+                            :title="$t('pages.simple_trade.currency_to_buy')"
+                            type="error"
                             :closable="false">
                         </el-alert>
                         <el-row>
                             <el-col style="padding-top: 10px">
                                 <el-row type="flex" justify="space-between">
-                                    <el-col :span="12" style="display: flex;justify-content: center;">
-                                        <el-tag @click="selectCurrencyBuy('BTC')" style="margin-right: 5px" type="info">BTC</el-tag>
-                                        <el-tag @click="selectCurrencyBuy('AC')" style="margin-right: 5px"  type="info">AC</el-tag>
-                                        <el-tag @click="selectCurrencyBuy('USD')" style="margin-right: 5px"  type="info">USD</el-tag>
+                                    <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
+                                        <el-button :plain="this.form.currency_buy !== 'BTC'" type="info" @click="selectCurrencyBuy('BTC')"  size="mini" round>BTC</el-button>
+                                        <el-button :plain="this.form.currency_buy !== 'AC'" type="info" @click="selectCurrencyBuy('AC')" size="mini" round>AC</el-button>
+                                        <el-button :plain="this.form.currency_buy !== 'USD'" type="info" @click="selectCurrencyBuy('USD')"  size="mini" round>USD</el-button>
                                     </el-col>
                                     <el-col :span="{span:7, offset:1}" style="display: flex;justify-content: center;">
                                         <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
-                                                          <el-tag
-                                                              :disable-transitions="false">
-                                                          Select other
-                                                        </el-tag>
+                                                          <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
                                                       </span>
                                             <el-dropdown-menu slot="dropdown">
                                                 <el-dropdown-item>
@@ -300,7 +294,7 @@
         computed:{
             isNextButtonDisabled() {
                 return !(this.form.currency_sell.length && this.form.currency_buy.length)
-            }
+            },
         },
         methods:{
             handleChange(val) {
