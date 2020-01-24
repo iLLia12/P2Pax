@@ -8,7 +8,7 @@
                     <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'15px', paddingBottom:'15px'}">
                         <el-alert
                             :title="$t('pages.simple_trade.currency_to_sell')"
-                            type="success"
+                            type="error"
                             :closable="false">
                         </el-alert>
                         <el-row>
@@ -67,7 +67,7 @@
                         <el-divider><div class="icon icon_switch" style="width: 40px; height: 40px"></div></el-divider>
                         <el-alert
                             :title="$t('pages.simple_trade.currency_to_buy')"
-                            type="error"
+                            type="success"
                             :closable="false">
                         </el-alert>
                         <el-row>
