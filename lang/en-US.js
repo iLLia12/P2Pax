@@ -143,6 +143,8 @@ export default {
             to_sell:"To sell",
             to_buy:"To buy",
             next:"NEXT",
+            create_order:"Create Order",
+            order_to_buy_sell_cryptocurrency:"Order to Buy/Sell Cryptocurrency",
             back:"BACK",
             save:"SAVE",
             amount:"amount",
