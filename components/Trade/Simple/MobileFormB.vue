@@ -6,119 +6,136 @@
                     <h5 class="title">{{$t('pages.simple_trade.order_to_buy_sell_cryptocurrency')}}</h5>
 
                     <el-card class="box-card" :body-style="{ borderRadius:'0', paddingTop:'15px', paddingBottom:'15px'}">
-                        <el-alert
-                            :title="$t('pages.simple_trade.currency_to_sell')"
-                            type="error"
-                            :closable="false">
-                        </el-alert>
-                        <el-row>
-                            <el-col style="padding-top: 10px">
-                                <el-row type="flex" justify="space-between">
-                                    <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
-                                        <el-button type="info" :plain="this.form.currency_sell !== 'BTC'" @click="selectCurrencySell('BTC')"  size="mini" round>BTC</el-button>
-                                        <el-button type="info" :plain="this.form.currency_sell !== 'AC'" @click="selectCurrencySell('AC')" size="mini" round>AC</el-button>
-                                        <el-button type="info" :plain="this.form.currency_sell !== 'USD'" @click="selectCurrencySell('USD')"  size="mini" round>USD</el-button>
-                                    </el-col>
-                                    <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
-                                        <el-dropdown trigger="click">
+                        <div>
+                            <el-alert
+                                :title="$t('pages.simple_trade.currency_to_sell')"
+                                type="error"
+                                :closable="false">
+                            </el-alert>
+                            <el-row>
+                                <el-col style="padding-top: 10px">
+                                    <el-row type="flex" justify="space-between">
+                                        <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
+                                            <el-button :type="this.form.currency_sell !== 'BTC' ? 'info' : 'danger'"
+                                                       :plain="this.form.currency_sell !== 'BTC'"
+                                                       @click="selectCurrencySell('BTC')"
+                                                       size="mini" round>BTC</el-button>
+                                            <el-button :type="this.form.currency_sell !== 'AC' ? 'info' : 'danger'"
+                                                       :plain="this.form.currency_sell !== 'AC'"
+                                                       @click="selectCurrencySell('AC')"
+                                                       size="mini" round>AC</el-button>
+                                            <el-button :type="this.form.currency_sell !== 'USD' ? 'info' : 'danger'"
+                                                       :plain="this.form.currency_sell !== 'USD'"
+                                                       @click="selectCurrencySell('USD')"
+                                                       size="mini" round>USD</el-button>
+                                        </el-col>
+                                        <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
+                                            <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
                                                           <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
                                                       </span>
-                                            <el-dropdown-menu slot="dropdown">
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencySell('ETH')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        ETH
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencySell('RUB')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        RUB
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencySell('UAH')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        UAH
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                            </el-dropdown-menu>
-                                        </el-dropdown>
-                                    </el-col>
-                                </el-row>
-                                <el-row>
-                                    <el-col :span="12">
-                                        <el-form-item label="">
-                                            <el-input ref="sell_amount" :placeholder="$t('pages.simple_trade.amount')" v-model="form.currency_sell_amount"></el-input>
-                                        </el-form-item>
-                                    </el-col>
-                                    <el-col :span="12">
-                                        <el-form-item label="">
-                                            <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.currency_sell_price"></el-input>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
-                            </el-col>
-                        </el-row>
+                                                <el-dropdown-menu slot="dropdown">
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_sell !== 'ETH' ? 'info' : 'danger'"
+                                                                   :plain="this.form.currency_sell !== 'ETH'"
+                                                                   @click="selectCurrencySell('ETH')"
+                                                                   size="mini" round>ETH</el-button>
+                                                    </el-dropdown-item>
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_sell !== 'RUB' ? 'info' : 'danger'"
+                                                                   :plain="this.form.currency_sell !== 'RUB'"
+                                                                   @click="selectCurrencySell('RUB')"
+                                                                   size="mini" round>ETH</el-button>
+                                                    </el-dropdown-item>
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_sell !== 'UAH' ? 'info' : 'danger'"
+                                                                   :plain="this.form.currency_sell !== 'UAH'"
+                                                                   @click="selectCurrencySell('RUB')"
+                                                                   size="mini" round>UAH</el-button>
+                                                    </el-dropdown-item>
+                                                </el-dropdown-menu>
+                                            </el-dropdown>
+                                        </el-col>
+                                    </el-row>
+                                    <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="">
+                                                <el-input ref="sell_amount" :placeholder="$t('pages.simple_trade.amount')" v-model="form.currency_sell_amount"></el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="12">
+                                            <el-form-item label="">
+                                                <el-input :placeholder="$t('pages.simple_trade.price')" v-model="form.currency_sell_price"></el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+                                </el-col>
+                            </el-row>
+                        </div>
                         <el-divider><div class="icon icon_switch" style="width: 40px; height: 40px"></div></el-divider>
-                        <el-alert
-                            :title="$t('pages.simple_trade.currency_to_buy')"
-                            type="success"
-                            :closable="false">
-                        </el-alert>
-                        <el-row>
-                            <el-col style="padding-top: 10px">
-                                <el-row type="flex" justify="space-between">
-                                    <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
-                                        <el-button :plain="this.form.currency_buy !== 'BTC'" type="info" @click="selectCurrencyBuy('BTC')"  size="mini" round>BTC</el-button>
-                                        <el-button :plain="this.form.currency_buy !== 'AC'" type="info" @click="selectCurrencyBuy('AC')" size="mini" round>AC</el-button>
-                                        <el-button :plain="this.form.currency_buy !== 'USD'" type="info" @click="selectCurrencyBuy('USD')"  size="mini" round>USD</el-button>
-                                    </el-col>
-                                    <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
-                                        <el-dropdown trigger="click">
+                        <div style="padding-top: 10px">
+                            <el-alert
+                                :title="$t('pages.simple_trade.currency_to_buy')"
+                                type="success"
+                                :closable="false">
+                            </el-alert>
+                            <el-row>
+                                <el-col style="padding-top: 10px">
+                                    <el-row type="flex" justify="space-between">
+                                        <el-col :span="12" style="display: flex;justify-content: center;padding-left: 10px">
+
+                                            <el-button :type="this.form.currency_buy !== 'BTC' ? 'info' : 'success'"
+                                                       :plain="this.form.currency_buy !== 'BTC'"
+                                                       @click="selectCurrencyBuy('BTC')"
+                                                       size="mini" round>BTC</el-button>
+                                            <el-button :type="this.form.currency_buy !== 'AC' ? 'info' : 'success'"
+                                                       :plain="this.form.currency_buy !== 'AC'"
+                                                       @click="selectCurrencyBuy('AC')"
+                                                       size="mini" round>AC</el-button>
+                                            <el-button :type="this.form.currency_buy !== 'USD' ? 'info' : 'success'"
+                                                       :plain="this.form.currency_buy !== 'USD'"
+                                                       @click="selectCurrencyBuy('USD')"
+                                                       size="mini" round>USD</el-button>
+                                        </el-col>
+                                        <el-col :xs="{span:7, offset:1}" :sm="{span:7, offset:1}" :md="{span:7, offset:1}" :lg="{span:7, offset:1}" :xl="{span:7, offset:1}" style="display: flex;justify-content: center;">
+                                            <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
                                                           <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select other</el-button>
                                                       </span>
-                                            <el-dropdown-menu slot="dropdown">
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencyBuy('ETH')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        ETH
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencyBuy('RUB')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        RUB
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                                <el-dropdown-item>
-                                                    <el-tag @click="selectCurrencyBuy('UAH')"
-                                                            type="warning"
-                                                            effect="plain">
-                                                        UAH
-                                                    </el-tag>
-                                                </el-dropdown-item>
-                                            </el-dropdown-menu>
-                                        </el-dropdown>
-                                    </el-col>
-                                </el-row>
-                                <el-row type="flex" justify="center">
-                                    <el-col :span="2">
-                                        <div style="display: inline-block">{{form.currency_buy_price}}</div>
-                                    </el-col>
-                                </el-row>
-                            </el-col>
-                        </el-row>
-                        <el-row type="flex" justify="center" class="btn-wrap">
-                            <el-button @click="changeStep(2)" type="success">{{$t('pages.simple_trade.create_order')}}</el-button>
-                        </el-row>
+                                                <el-dropdown-menu slot="dropdown">
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_buy !== 'ETH' ? 'info' : 'success'"
+                                                                   :plain="this.form.currency_buy !== 'ETH'"
+                                                                   @click="selectCurrencyBuy('ETH')"
+                                                                   size="mini" round>ETH</el-button>
+                                                    </el-dropdown-item>
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_buy !== 'RUB' ? 'info' : 'success'"
+                                                                   :plain="this.form.currency_buy !== 'RUB'"
+                                                                   @click="selectCurrencyBuy('RUB')"
+                                                                   size="mini" round>ETH</el-button>
+                                                    </el-dropdown-item>
+                                                    <el-dropdown-item>
+                                                        <el-button :type="this.form.currency_buy !== 'UAH' ? 'info' : 'success'"
+                                                                   :plain="this.form.currency_buy !== 'UAH'"
+                                                                   @click="selectCurrencyBuy('RUB')"
+                                                                   size="mini" round>UAH</el-button>
+                                                    </el-dropdown-item>
+                                                </el-dropdown-menu>
+                                            </el-dropdown>
+                                        </el-col>
+                                    </el-row>
+                                    <el-row type="flex" justify="center">
+                                        <el-col :span="2">
+                                            <div style="display: inline-block">{{form.currency_buy_price}}</div>
+                                        </el-col>
+                                    </el-row>
+                                </el-col>
+                            </el-row>
+                            <el-row type="flex" justify="center" class="btn-wrap">
+                                <el-button @click="changeStep(2)" type="success">{{$t('pages.simple_trade.create_order')}}</el-button>
+                            </el-row>
+                        </div>
                     </el-card>
                 </el-col>
 
