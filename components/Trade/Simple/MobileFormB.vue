@@ -18,7 +18,12 @@
                                         <el-col :xs="{span:4, offset:10}" :sm="{span:4, offset:10}" :md="{span:4, offset:10}" :lg="{span:4, offset:10}" :xl="{span:4, offset:10}" style="display: flex;justify-content: center;">
                                             <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
-                                                          <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select Currency to Sell</el-button>
+                                                          <el-button icon="el-icon-bottom"
+                                                                     size="mini"
+                                                                     :type="this.form.currency_sell ? 'danger' : 'primary'"
+                                                                     plain>
+                                                              {{this.form.currency_sell ? this.form.currency_sell : 'Select Currency to Sell'}}
+                                                          </el-button>
                                                       </span>
                                                 <el-dropdown-menu slot="dropdown">
                                                     <el-dropdown-item>
@@ -91,7 +96,12 @@
                                         <el-col :xs="{span:4, offset:10}" :sm="{span:4, offset:10}" :md="{span:4, offset:10}" :lg="{span:4, offset:10}" :xl="{span:4, offset:10}" style="display: flex;justify-content: center;">
                                             <el-dropdown trigger="click">
                                                       <span class="el-dropdown-link">
-                                                          <el-button icon="el-icon-bottom" size="mini" type="primary" plain>Select Currency to Buy</el-button>
+                                                          <el-button icon="el-icon-bottom"
+                                                                     size="mini"
+                                                                     :type="this.form.currency_buy ? 'success' : 'primary'"
+                                                                     plain>
+                                                              {{this.form.currency_buy ? this.form.currency_buy : 'Select Currency to Buy'}}
+                                                          </el-button>
                                                       </span>
                                                 <el-dropdown-menu slot="dropdown">
                                                     <el-dropdown-item>
