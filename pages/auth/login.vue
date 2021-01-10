@@ -67,9 +67,6 @@
 
 <style lang="scss">
 
-    @import "assets/scss/element-ui-colors";
-    @import "assets/scss/variables";
-
     .login-wrap {
         height: 480px;
         display: flex;

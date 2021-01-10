@@ -59,9 +59,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-
     .friends-index-wrap {
         margin-top: 40px;
         .el-tabs__content {

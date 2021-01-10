@@ -28,9 +28,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-
     .trade-simple-wrap {
         margin-top: 40px;
 

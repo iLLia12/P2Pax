@@ -11,11 +11,9 @@
 </template>
 
 <script>
-
     import Logo from '../components/Logo'
     import FooterComponent from '../components/Footer'
     import Header from '../components/Header'
-
     export default {
         components: {
             Logo,
@@ -30,9 +28,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-
-    @import "assets/scss/variables";
-
-</style>

@@ -278,9 +278,6 @@
 
 <style lang="scss">
 
-    @import "assets/scss/variables";
-    @import "assets/scss/element-ui-colors";
-
     .trade-simple-mobile {
         height: 110vh;
         display: none;

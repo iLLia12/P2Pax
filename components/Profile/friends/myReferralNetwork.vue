@@ -47,9 +47,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-    @import "../../../assets/scss/variables";
-
     .payable-title {
         font-weight: 600;
         line-height: 21px;

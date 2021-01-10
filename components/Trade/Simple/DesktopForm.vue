@@ -324,10 +324,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-    @import "assets/scss/element-ui-colors";
-
     .trade-simple-desktop {
         height: 70vh;
         .currency-tag-wrap {

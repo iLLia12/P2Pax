@@ -122,7 +122,6 @@
 </template>
 
 <script>
-    import FooterComponent from "../Footer/index";
     const icons = {
         'en':'icon_uk',
         'ru':'icon_ru',
@@ -142,11 +141,6 @@
                 isActive: false
             }
         },
-        computed: {
-            langFlagIcon() {
-                return 'icon icon_lang ' + icons[this.$i18n.locale];
-            },
-        },
         methods: {
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
@@ -165,11 +159,6 @@
 </script>
 
 <style lang="scss">
-    .icon_lang {
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-    }
     .nav-btn-wrap {
         padding: 10px 0;
     }

@@ -84,10 +84,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/element-ui-colors";
-    @import "assets/scss/variables";
-
     .reg-wrap {
         height: 900px;
         display: flex;

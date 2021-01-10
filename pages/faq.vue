@@ -66,9 +66,6 @@
 </script>
 
 <style lang="scss">
-    @import "assets/scss/element-ui-colors";
-    @import "assets/scss/variables";
-
     .faq-outer-wrap {
         height: 59vh !important;
     }

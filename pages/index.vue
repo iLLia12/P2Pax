@@ -95,7 +95,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item>
-                            <el-button class="search-btn btn-pink" @click="onSubmit">{{$t('buttons.search')}}</el-button>
+                            <el-button class="search-btn" type="danger" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>
@@ -186,7 +186,7 @@
                                 align="right"
                                 label="">
                                 <template slot-scope="scope">
-                                    <el-button plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
+                                    <el-button type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -281,7 +281,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item>
-                            <el-button class="search-btn btn-pink" @click="onSubmit">{{$t('buttons.search')}}</el-button>
+                            <el-button class="search-btn" type="danger" @click="onSubmit">{{$t('buttons.search')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </el-card>
@@ -372,7 +372,7 @@
                                 align="right"
                                 label="">
                                 <template slot-scope="scope">
-                                    <el-button plain type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
+                                    <el-button type="primary" size="mini">{{$t('buttons.buy')}}</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>

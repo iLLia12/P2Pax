@@ -73,13 +73,9 @@
 </script>
 
 <style lang="scss" scoped>
-
-    @import "assets/scss/variables";
-
     .faq-wrap {
         margin-top: 30px !important;
     }
-
     .sub-title {
         font-weight: 600;
         font-size: 14px;

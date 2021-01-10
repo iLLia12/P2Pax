@@ -197,9 +197,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-
     .wallets-index-wrap {
         margin-top: 40px;
         .profile-title {

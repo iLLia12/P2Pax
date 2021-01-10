@@ -262,9 +262,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-
     .profile-index-wrap {
         margin-top: 40px;
         .profile-title {

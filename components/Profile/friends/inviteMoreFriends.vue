@@ -19,9 +19,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-    @import "../../../assets/scss/variables";
-
     .title {
         margin: 0;
         font-weight: 600;

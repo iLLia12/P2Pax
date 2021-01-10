@@ -35,8 +35,6 @@
 </script>
 
 <style lang="scss">
-    @import "assets/scss/element-ui-colors";
-    @import "assets/scss/variables";
     .reset-pass-outer-wrap {
         height: 59.8vh !important;
     }

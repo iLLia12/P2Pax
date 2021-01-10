@@ -366,10 +366,6 @@
 </script>
 
 <style lang="scss">
-
-    @import "assets/scss/variables";
-    @import "assets/scss/element-ui-colors";
-
     .trade-simple-mobile {
         height: 90vh;
         display: none;
