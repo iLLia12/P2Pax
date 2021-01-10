@@ -2,29 +2,29 @@
     <el-tabs type="border-card" @tab-click="handleTabClick" :activeName="friendsActiveTab" class="friends-tabs">
         <el-tab-pane label="Dashboard" name="Dashboard">
             <el-row class="custom-sidebar-top">
-                <el-col :span="22" class="partner-img-mobile-wrap">
+                <el-col :span="22" class="d-none partner-img-mobile-wrap">
                     <img src="~/assets/images/svg/reff.svg" alt="">
                 </el-col>
                 <el-col :xs="23" :sm="23" :md="23" :lg="12" :xl="12" class="dashboard-text-wrap">
-                    <div class="title-reff">
+                    <div class="title-reff fs24px fw600 mt30px mb20px">
                         Refer a friend, earn up to 50% of commission and stand a chance to win prizes!
                     </div>
-                    <div class="partner-text">
+                    <div class="partner-text fs14px color-text-secondary">
                         Invite your friends via social media or email and track performance - number of invitations, clicks, sign ups, referral network and overall performance.
                     </div>
                     <div class="dashboard-btn-wrap">
                         <el-button type="primary">How it works?</el-button>
                     </div>
                 </el-col>
-                <el-col :span="12" class="partner-img-wrap">
+                <el-col :span="12" class="partner-img-wrap d-flex justify-end">
                     <img src="~/assets/images/svg/reff.svg" alt="">
                 </el-col>
             </el-row>
         </el-tab-pane>
         <el-tab-pane label="My referrals" name="My referrals">
-            <el-row class="referrals-input-wrap">
+            <el-row class="referrals-input-wrap mb0x pt10px">
                 <el-col :xs="3" :sm="3" :md="3" :lg="3" :xl="3">
-                    <p class="title">Users</p>
+                    <p class="fw600 fs18px pl10px pt10px color-text-secondary">Users</p>
                 </el-col>
                 <el-col :xs="24" :sm="24" :md="24" :lg="{span:18, offset:2}" :xl="{span:16, offset:4}" class="date-picker-wrap">
                     <el-date-picker
@@ -164,42 +164,15 @@
     }
 </script>
 
-<style lang="scss" scoped>
-
-    @import "assets/scss/variables";
-
+<style lang="scss">
     .friends-tabs {
         .partner-text {
-            font-size: 14px;
             margin: 0 0 10px;
-            color: $--color-text-secondary;
         }
         .custom-sidebar-top {
             padding: 20px 0 0 50px;
         }
-        .partner-img-wrap {
-            display: flex;
-            justify-content: flex-end;
-        }
-        .title-reff {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-        .partner-img-mobile-wrap {
-            display: none;
-        }
-        .title {
-            font-weight: 600;
-            font-size: 18px;
-            padding-left: 10px;
-            padding-top: 10px;
-            color: #878d99;
-        }
         .referrals-input-wrap {
-            margin-bottom: 0;
-            padding-top: 10px;
             .el-range-separator {
                 width: 10%;
             }

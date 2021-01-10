@@ -187,21 +187,13 @@ button, input {
             display: none;
         }
     }
-    .benefits-col {
-        display: block;
-        width: 100%;
-        margin-left: 0 !important;
-    }
     .el-card__body {
         height: auto !important;
     }
-    .benefits-present, .benefits-money {
+    .benefits-present, {
         display: flex;
         justify-content: center;
-    }
-    .head-title-block, .head-text-block {
-        text-align: center;
-        margin-top: 10px;
+        width: 100%;
     }
     .main-page-table-card {
         display: none;
@@ -211,6 +203,20 @@ button, input {
     }
     .banner-btn {
         width: 60%!important;
+    }
+    .head-title-block, .head-text-block {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .benefits-money {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .benefits-col {
+        display: block;
+        width: 100%;
+        margin-left: 0 !important;
     }
     .profile-menu {
         display: flex;
@@ -227,9 +233,6 @@ button, input {
     }
 }
 @media (max-width: 1400px){
-    .banner-btn {
-        width: 100% !important;
-    }
     .friends-index-wrap {
         .partner-img-wrap {
             display: none!important;
@@ -237,6 +240,9 @@ button, input {
         .partner-img-mobile-wrap {
             display: flex!important;
             justify-content: center;
+        }
+        .banner-btn {
+            width: 100% !important;
         }
         .el-tabs {
             padding-bottom: 20px;
@@ -337,12 +343,6 @@ button, input {
     }
 }
 @media (max-width: 950px){
-    .banner-img-wrap {
-        display: none;
-    }
-    .banner-text-wrap {
-        width: 100%!important;
-    }
     .free-stat, .free-title {
         text-align: center;
     }
@@ -353,6 +353,12 @@ button, input {
         text-align:left;
         float:none;
         line-height: 0;
+    }
+    .banner-img-wrap {
+        display: none;
+    }
+    .banner-text-wrap {
+        width: 100%!important;
     }
     .form-hits {
         margin-top: 2px;
@@ -400,11 +406,8 @@ button, input {
     .wallets-index-wrap, .friends-index-wrap {
         margin-top: 0!important;
     }
-    .benefits-flex-disabler {
-        display: block;
-    }
-    .benefits-col-wrap {
-        margin-bottom: 30px;
+    .banner-btn {
+        width: 100% !important;
     }
     .banner-img-wrap {
         display: none;
@@ -412,14 +415,20 @@ button, input {
     .banner-text-wrap {
         width: 100% !important;
     }
+    .benefits-col-wrap {
+        margin-bottom: 30px;
+    }
+    .benefits-flex-disabler {
+        display: block;
+    }
+    .banner-img-wrap {
+        display: none;
+    }
     .free-title {
         text-align: center;
     }
     .free-stat {
         text-align: center;
-    }
-    .banner-btn {
-        width: 100% !important;
     }
     .banner-text-response {
         font-size: 20px;
@@ -440,7 +449,7 @@ button, input {
         display: flex;
         justify-content: flex-end;
     }
-    .nav-link-registration, .nav-link-login {
+    .nav-link-registration {
         display: block;
     }
     .nav-link-lang {

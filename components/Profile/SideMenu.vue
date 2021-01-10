@@ -28,13 +28,10 @@
 </template>
 
 <script>
-
     const routes = {
         "/profile": "1",
         "/profile/wallets": "2",
     };
-
-
     export default {
         name: "SideMenu",
         data:() => ({

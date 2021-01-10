@@ -11,7 +11,6 @@
                     </el-steps>
                 </el-col>
             </el-row>
-
             <el-row v-if="activeStep === 0">
                 <el-row>
                     <el-col :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="{span:12,offset:6}" :xl="{span:12,offset:6}">
@@ -105,8 +104,6 @@
                     </div>
                 </el-row>
             </el-row>
-
-
             <el-row v-if="activeStep === 1">
                 <el-col :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="{span:12,offset:6}" :xl="{span:12,offset:6}">
                     <el-card class="box-card" :body-style="{ borderRadius:'0'}">
@@ -147,8 +144,6 @@
                     </el-card>
                 </el-col>
             </el-row>
-
-
             <el-row v-if="activeStep === 2">
                 <el-col :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="{span:12,offset:6}" :xl="{span:12,offset:6}">
                     <el-card class="box-card" :body-style="{ borderRadius:'0'}">
@@ -177,7 +172,6 @@
                                 </el-form-item>
                             </el-col>
                         </el-row>
-
                         <el-row type="flex" justify="center" class="btn-wrap">
                             <el-button @click="prevStep">{{$t('pages.simple_trade.back')}}</el-button>
                             <el-button @click="nextStep" type="success">{{$t('pages.simple_trade.next')}}</el-button>
@@ -185,8 +179,6 @@
                     </el-card>
                 </el-col>
             </el-row>
-
-
             <el-row v-if="activeStep === 3">
                 <el-col :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="{span:12,offset:6}" :xl="{span:12,offset:6}">
                     <el-card class="box-card" :body-style="{ borderRadius:'0'}">
@@ -232,7 +224,6 @@
                                 </el-col>
                             </el-row>
                         </el-form>
-
                         <el-row type="flex" justify="center" class="btn-wrap">
                             <el-button @click="prevStep">{{$t('pages.simple_trade.back')}}</el-button>
                             <el-button @click="nextStep" type="success">{{$t('pages.simple_trade.next')}}</el-button>
@@ -240,7 +231,6 @@
                     </el-card>
                 </el-col>
             </el-row>
-
             <el-row v-if="activeStep === 4">
                 <el-col :xs="{span:12,offset:6}" :sm="{span:12,offset:6}" :md="{span:12,offset:6}" :lg="{span:12,offset:6}" :xl="{span:12,offset:6}">
                     <el-card class="box-card" :body-style="{ borderRadius:'0'}">
@@ -253,7 +243,6 @@
                     </el-card>
                 </el-col>
             </el-row>
-
         </el-form>
     </el-col>
 </template>

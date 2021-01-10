@@ -1,6 +1,6 @@
 <template>
-    <section class="faq-wrap">
-        <p class="title">Frequently asked questions</p>
+    <section class="faq-wrap mb10x">
+        <p class="fw600 fs18px mb10x color-text-secondary">Frequently asked questions</p>
         <el-row class="input-wrap">
             <el-col class="faq-inner-wrap" :xs="24" :sm="24" :md="24" :lg="{span:8, offset:0}" :xl="{span:8, offset:0}">
                 <el-card :body-style="{ borderRadius:'0'}">
@@ -76,19 +76,10 @@
 
     @import "assets/scss/variables";
 
-    .title {
-        font-weight: 600;
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: $--color-text-secondary;
-    }
     .faq-wrap {
         margin-top: 30px !important;
-        margin-bottom: 10px;
     }
-    .faq-inner-wrap {
 
-    }
     .sub-title {
         font-weight: 600;
         font-size: 14px;

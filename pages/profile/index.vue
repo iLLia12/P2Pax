@@ -72,8 +72,6 @@
                             </el-form>
                         </el-col>
                     </el-row>
-
-
                     <el-row>
                         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="{span:11, offset:0}" class="basic-info-wrap">
                             <h1 class="profile-title">Basic information</h1>
@@ -228,7 +226,6 @@
                             </el-row>
                         </el-col>
                     </el-row>
-
                 </el-col>
             </el-row>
         </el-col>
@@ -236,9 +233,7 @@
 </template>
 
 <script>
-
     import SideMenu from "../../components/Profile/SideMenu";
-
     export default {
         name: "index",
         components:{

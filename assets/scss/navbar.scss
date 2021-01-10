@@ -1,21 +1,17 @@
 .header {
-
     .logo-header {
         padding-right: 50px;
         z-index: 100;
     }
-
     .navWrapper {
         width: 100%;
         position: absolute;
         top: 0;
         z-index: 20;
     }
-
     #logo.el-menu-item.is-active {
         border-bottom-color: transparent;
     }
-
     #toggle {
         position: absolute;
         right: 20px;
@@ -29,26 +25,21 @@
         visibility: hidden;
         opacity: 0;
     }
-
     #toggle .span {
         border-radius: 10px;
         background: $nav-toggle-color;
         transition: all 0.3s ease-out;
         backface-visibility: hidden;
     }
-
     #top.span.active {
         transform: rotate(45deg) translateX(3px) translateY(5px);
     }
-
     #middle.span.active {
         opacity: 0;
     }
-
     #bottom.span.active {
         transform: rotate(-45deg) translateX(8px) translateY(-10px);
     }
-
     @media only screen and (max-width: $screen-md-min) {
         .nav-btn-wrap {
             display: none;
@@ -59,12 +50,10 @@
         .logo-header {
             padding: 0;
         }
-
         #toggle {
             visibility: visible;
             opacity: 1;
         }
-
         #toggle .span {
             height: 4px;
             margin: 5px 0;
@@ -73,11 +62,9 @@
             visibility: visible;
             opacity: 1;
         }
-
         #menu .el-menu-item {
             display: none;
         }
-
         #menu.active {
             margin: 50px 0;
             visibility: visible;
@@ -87,5 +74,4 @@
             @include sm-menu;
         }
     }
-
 }
