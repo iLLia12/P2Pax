@@ -1,10 +1,3 @@
-@import "icons";
-@import 'variables';
-@import 'element-ui';
-@import "navbar";
-@import "element-ui-variables";
-@import "helpers";
-
 html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -27,8 +20,9 @@ html {
     font-family: Roboto, sans-serif;
 }
 
-body, main, #__nuxt,  #__layout, .layout-wrap,.el-main,.content-wrap{
+body, main, #__nuxt,  #__layout, .layout-wrap,.el-main,.content-wrap {
     height:100%;
+    min-height: 100vh;
 }
 footer {
     width: 100%;
@@ -36,16 +30,10 @@ footer {
     height: 100%;
 }
 body{
-    background: #F2F6FC;
+    background: $body-bg;
 }
 button, input {
     border-radius: 0 !important;
-}
-.text-right {
-    text-align: right;
-}
-.text-center {
-    text-align: center;
 }
 .free-stat, .free-title {
     text-align:left;
@@ -58,10 +46,10 @@ button, input {
     background: #F2F6FC;
 }
 #menu {
-    box-shadow: 0px 4px 12px -3px rgba(0,0,0,0.46);
+    box-shadow: 0 4px 12px -3px rgba(0,0,0,0.46);
 }
 .btn-shadow {
-    box-shadow: 0px 4px 12px -4px rgba(0,0,0,0.68);
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,0.68);
 }
 .is-always-shadow, .el-tabs--border-card {
     box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12)!important;
@@ -106,10 +94,6 @@ button, input {
     display: block;
 }
 @media (max-width: 1920px){
-    .icon-exchange-outer {
-        display: flex;
-        justify-content: center;
-    }
     .account-security {
         .col {
             margin-bottom: 20px;
@@ -124,7 +108,6 @@ button, input {
     .login-history-btn-wrap {
         margin-top: 20px;
     }
-
     .side-menu-wrap {
         margin-bottom: 30px;
     }
@@ -136,7 +119,7 @@ button, input {
     }
 }
 
-@media (max-width: 1700px){
+@media (max-width: 1700px) {
     .wallets-index-wrap {
         .wallets-tiles {
             display: block;
@@ -159,9 +142,9 @@ button, input {
     .card-mobile-proposals {
         display: block!important;
     }
-    .banner-btn {
+    /*.banner-btn {
         width: 60%!important;
-    }
+    }*/
     .head-title-block, .head-text-block {
         text-align: center;
         margin-top: 10px;
@@ -190,6 +173,14 @@ button, input {
         }
     }
 }
+@media (max-width: 1540px) {
+    .head-title-block {
+        font-size: 16px;
+    }
+    .head-text-block {
+        font-size: 13px;
+    }
+}
 @media (max-width: 1400px){
     .friends-index-wrap {
         .partner-img-wrap {
@@ -199,9 +190,9 @@ button, input {
             display: flex!important;
             justify-content: center;
         }
-        .banner-btn {
+        /*.banner-btn {
             width: 100% !important;
-        }
+        }*/
         .el-tabs {
             padding-bottom: 20px;
         }
@@ -271,6 +262,21 @@ button, input {
         }
     }
 }
+
+@media (max-width: 1199px) {
+    .benefits-wrap {
+        display: block;
+    }
+    .benefits-money, .benefits-present {
+        justify-content: center;
+        display: flex;
+        max-width: none;
+    }
+    .benefits-col {
+        padding-left: 0;
+    }
+}
+
 @media (max-width: 990px){
     .icon-help {
         color: #909399;
@@ -321,10 +327,6 @@ button, input {
     .form-hits {
         margin-top: 2px;
     }
-    .box-card-create-trade {
-        padding-top: 0!important;
-        padding-bottom: 0!important;
-    }
     .el-collapse-item__header {
         line-height: 20px;
     }
@@ -343,11 +345,13 @@ button, input {
     .el-collapse-item__header, .faq-answer {
         font-size: 12px;
     }
-
     .profile-index-wrap {
         .el-select {
             width: 100%;
         }
+    }
+    .banner-img-wrap {
+        display: none!important;
     }
 }
 
@@ -359,13 +363,14 @@ button, input {
         min-height: 800px!important;
     }
 }
-
+@media (min-width: 768px){
+    .support-outer-wrap {
+        padding-top:  100px;
+    }
+}
 @media (max-width: 768px){
     .wallets-index-wrap, .friends-index-wrap {
         margin-top: 0!important;
-    }
-    .banner-btn {
-        width: 100% !important;
     }
     .banner-img-wrap {
         display: none;
@@ -373,11 +378,14 @@ button, input {
     .banner-text-wrap {
         width: 100% !important;
     }
+    .support-outer-wrap {
+        padding-top:  0;
+    }
     .benefits-col-wrap {
         margin-bottom: 30px;
     }
     .benefits-flex-disabler {
-        display: block;
+        display: block !important;
     }
     .banner-img-wrap {
         display: none;

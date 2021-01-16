@@ -1,6 +1,6 @@
 # app
 
-> My legendary Nuxt.js project
+> Nuxt.js, Element-ui
 
 ## Build Setup
 

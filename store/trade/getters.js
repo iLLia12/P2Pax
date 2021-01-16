@@ -1,4 +1,4 @@
 export default {
-    checkoutProducts: state => state.checkoutProducts,
-    isCheckout: state => state.isCheckout,
-}
+  checkoutProducts: (state) => state.checkoutProducts,
+  isCheckout: (state) => state.isCheckout,
+};

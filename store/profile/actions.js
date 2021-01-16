@@ -1,5 +1,5 @@
 export default {
-    setFriendsActiveTab({ state, commit }, activeTab) {
-        commit('SET_FRIENDS_ACTIVE_TAB', activeTab);
-    },
-}
+  setFriendsActiveTab({ state, commit }, activeTab) {
+    commit("SET_FRIENDS_ACTIVE_TAB", activeTab);
+  },
+};
