@@ -2,15 +2,16 @@
 
 > Cryptocurrency exchange application (UI only) based on NUXT and Element-ui
 
-Demo:<br>
-1. <a src="http://165.227.166.214/">main</a>
-2. <a src="http://165.227.166.214/profile">profile</a>
-3. <a src="http://165.227.166.214/profile/friends">profile friends</a>
-4. <a src="http://165.227.166.214/trade/create">trade create</a>
-5. <a src="http://165.227.166.214/trade/create/simple">trade</a>
-6. <a src="http://165.227.166.214/auth/login">login</a>
-7. <a src="http://165.227.166.214/auth/registration">registration</a>
-7. <a src="http://165.227.166.214/support">support</a>
+Demo pages:
+
+1. [main](http://165.227.166.214/)
+2. [profile](http://165.227.166.214/profile)
+3. [profile friends](http://165.227.166.214/profile/friends)
+4. [trade create](http://165.227.166.214/trade/create)
+5. [trade](http://165.227.166.214/trade/create/simple)
+6. [login](http://165.227.166.214/auth/login)
+7. [registration](http://165.227.166.214/auth/registration)
+7. [support](http://165.227.166.214/support)
 
 ## Build Setup
 
