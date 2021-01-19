@@ -9,7 +9,7 @@
         "build": "nuxt build",
         "start": "nuxt --port=3333 start",
         "generate": "nuxt generate",
-        "prod": "pm2 start npm -- start",
+        "prod": "pm2 start npm --name 'p2pax' -- start",
         "test": "jest",
         "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore .",
         "lintfix": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore ."
