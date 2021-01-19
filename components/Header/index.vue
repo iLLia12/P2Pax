@@ -20,22 +20,6 @@
               <el-menu-item @click="isActive = !isActive">
                 <n-link
                   class="mr25px h60px w120px text-align-center color-primary text-decoration-none"
-                  to="#"
-                  no-prefetch
-                  >{{ $t("top_nav.buy") }}</n-link
-                >
-              </el-menu-item>
-              <el-menu-item @click="isActive = !isActive">
-                <n-link
-                  class="mr25px h60px w120px text-align-center color-primary text-decoration-none"
-                  to="#"
-                  no-prefetch
-                  >{{ $t("top_nav.sell") }}</n-link
-                >
-              </el-menu-item>
-              <el-menu-item @click="isActive = !isActive">
-                <n-link
-                  class="mr25px h60px w120px text-align-center color-primary text-decoration-none"
                   to="/trade/create"
                   no-prefetch
                   >{{ $t("top_nav.post_trade") }}</n-link
