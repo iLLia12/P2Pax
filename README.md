@@ -1,6 +1,4 @@
-# app
-
-> Cryptocurrency exchange application (UI only) based on NUXT and Element-ui
+# Cryptocurrency exchange application (UI only) based on NUXT and Element-ui
 
 Demo pages:
 
